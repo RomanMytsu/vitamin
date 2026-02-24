@@ -6,11 +6,11 @@ export const svgSprive = () => {
     .src(app.path.src.svg)
     .pipe(
       cheerio({
-        run: ($) => {
-          $("[fill]").removeAttr("fill");
-          $("[stroke]").removeAttr("stroke");
-          $("[style]").removeAttr("style");
-        },
+        // run: ($) => {
+        //   $("[fill]").removeAttr("fill");
+        //   $("[stroke]").removeAttr("stroke");
+        //   $("[style]").removeAttr("style");
+        // },
         parserOptions: { xmlMode: true },
       })
     )

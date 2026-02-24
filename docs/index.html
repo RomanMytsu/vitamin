@@ -2,20 +2,56 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg?v=2" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20260224004704" />
+    <link rel="stylesheet" href="css/style.min.css?_v=20260224162751" />
     <title>Home</title>
 </head>
   <body>
-    <header class="header">header</header>
+    <header class="header">
+  <div class="header__container container">
+    <div class="header__content">
+      <button class="header__btn-open-menu">
+        <span class="header__btn-open-icon"></span>
+        <span class="header__btn-open-icon"></span>
+        <span class="header__btn-open-icon"></span>
+      </button>
+      <a href="/" class="header__logo-link">
+        <svg width="34" height="40">
+          <use href="img/sprite.svg#logo"></use>
+        </svg>
+      </a>
+      <ul class="header__list">
+        <li class="header__item">
+          <a href="profile.html" class="header__item-link">
+            <svg width="32" height="32">
+              <use href="img/sprite.svg#header--profile"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__item">
+          <a href="cart.html" class="header__item-link">
+            <svg width="32" height="32">
+              <use href="img/sprite.svg#header--cart"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__item">
+          <a href="quiz.html" class="header__item-quiz-link"> Take the quiz </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
     <main>
-      <section class="hero">hero</section>
+      
       
       
       
       
     </main>
-    <footer class="footer">footer</footer>
-    <script src="js/main.min.js?_v=20260224004704"></script>
+    
+    <script src="js/main.min.js?_v=20260224162751"></script>
   </body>
 </html>
