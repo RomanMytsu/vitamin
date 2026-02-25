@@ -1,0 +1,69 @@
+<div class="burger-menu">
+  <div class="burger-menu__container container">
+    <div class="burger-menu__views">
+      <!-- MAIN -->
+      <div class="burger-menu__view" data-view="main">
+        <div class="burger-menu__head">
+          <button class="burger-menu__close close-menu">
+            <span></span>
+            <span></span>
+          </button>
+          <button class="burger-menu__btn-profile" data-open="profile">
+            <svg width="32" height="32">
+              <use href="@img/sprite.svg#header--profile"></use>
+            </svg>
+          </button>
+        </div>
+        <ul class="burger-menu__list">
+          <li class="burger-menu__item">
+            <button class="burger-menu__btn" data-open="shop">Shop</button>
+            <svg width="9" height="15">
+              <use href="@img/sprite.svg#header--arrow"></use>
+            </svg>
+          </li>
+          <li class="burger-menu__item">
+            <button class="burger-menu__btn" data-open="info">
+              Information
+            </button>
+            <svg width="9" height="15">
+              <use href="@img/sprite.svg#header--arrow"></use>
+            </svg>
+          </li>
+          <li class="burger-menu__item">
+            <a href="quiz.html" class="burger-menu__link burger-menu__quiz-link"
+              >Take the quiz
+            </a>
+          </li>
+        </ul>
+        <div class="burger-menu__copy">
+          <ul class="burger-menu__copy-list">
+            <li class="burger-menu__copy-item">
+              <a
+                href="mailto:support@medstogo.com"
+                class="burger-menu__copy-link"
+                >support@medstogo.com</a
+              >
+            </li>
+            <li class="burger-menu__copy-item">
+              <p class="burger-menu__copy-text">
+                © 2020 Vitamins.com / All rights reserved
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- SHOP -->
+      <div class="burger-menu__view" data-view="shop">
+        @@include('components/base/burger/burger-shop-list.html')
+      </div>
+      <!-- Information -->
+      <div class="burger-menu__view" data-view="info">
+        @@include('components/base/burger/burger-info-list.html')
+      </div>
+      <!-- IProfile -->
+      <div class="burger-menu__view" data-view="profile">
+        @@include('components/base/burger/burger-profile.html')
+      </div>
+    </div>
+  </div>
+</div>

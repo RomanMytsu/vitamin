@@ -50,6 +50,7 @@
     background: none;
     border: none;
     margin-top: 9px;
+    position: relative;
     @media (min-width: v.$bp-laptop-sm) {
       display: none;
     }
@@ -58,6 +59,9 @@
       width: 24px;
       height: 2px;
       background: v.$color-black;
+      transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
     }
   }
 

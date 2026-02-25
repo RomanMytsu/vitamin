@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="img/logo.svg?v=2" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20260224162751" />
+    <link rel="stylesheet" href="css/style.min.css?_v=20260225231350" />
     <title>Home</title>
 </head>
   <body>
     <header class="header">
   <div class="header__container container">
     <div class="header__content">
-      <button class="header__btn-open-menu">
+      <button class="header__btn-open-menu open-menu">
         <span class="header__btn-open-icon"></span>
         <span class="header__btn-open-icon"></span>
         <span class="header__btn-open-icon"></span>
@@ -52,6 +52,189 @@
       
     </main>
     
-    <script src="js/main.min.js?_v=20260224162751"></script>
+
+    <div class="burger-menu">
+  <div class="burger-menu__container container">
+    <div class="burger-menu__views">
+      <!-- MAIN -->
+      <div class="burger-menu__view" data-view="main">
+        <div class="burger-menu__head">
+          <button class="burger-menu__close close-menu">
+            <span></span>
+            <span></span>
+          </button>
+          <button class="burger-menu__btn-profile" data-open="profile">
+            <svg width="32" height="32">
+              <use href="img/sprite.svg#header--profile"></use>
+            </svg>
+          </button>
+        </div>
+        <ul class="burger-menu__list">
+          <li class="burger-menu__item">
+            <button class="burger-menu__btn" data-open="shop">Shop</button>
+            <svg width="9" height="15">
+              <use href="img/sprite.svg#header--arrow"></use>
+            </svg>
+          </li>
+          <li class="burger-menu__item">
+            <button class="burger-menu__btn" data-open="info">
+              Information
+            </button>
+            <svg width="9" height="15">
+              <use href="img/sprite.svg#header--arrow"></use>
+            </svg>
+          </li>
+          <li class="burger-menu__item">
+            <a href="quiz.html" class="burger-menu__link burger-menu__quiz-link"
+              >Take the quiz
+            </a>
+          </li>
+        </ul>
+        <div class="burger-menu__copy">
+          <ul class="burger-menu__copy-list">
+            <li class="burger-menu__copy-item">
+              <a
+                href="mailto:support@medstogo.com"
+                class="burger-menu__copy-link"
+                >support@medstogo.com</a
+              >
+            </li>
+            <li class="burger-menu__copy-item">
+              <p class="burger-menu__copy-text">
+                © 2020 Vitamins.com / All rights reserved
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- SHOP -->
+      <div class="burger-menu__view" data-view="shop">
+        <div class="shop-list">
+  <div class="shop-list__shop-head">
+    <button class="shop-list__shop-head-btn-back" data-back="main">
+      <svg width="32" height="34">
+        <use href="img/sprite.svg#header--back_arrow"></use>
+      </svg>
+    </button>
+    <p>Shop</p>
+  </div>
+  <ul class="shop-list__shop-list shop-only">
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">All categories</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#"
+        >Vitamins & Dietary Supplements</a
+      >
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Weight Loss</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Minerals</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Antioxidants</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Probiotics</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Pain Relief</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Prenatal Vitamins</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link shop-list__shop-link-red" href="#"
+        >Sale%</a
+      >
+    </li>
+  </ul>
+  <div class="shop-list__bottom">
+    <h3 class="shop-list__bottom-title">
+      Don’t know what vitamins your body needs?
+    </h3>
+    <p class="shop-list__bottom-text">
+      Answer a few simple questions and automaticallyget a personalazed list of
+      vitamins in minutes
+    </p>
+    <button class="shop-list__bottom-btn">Take the quiz</button>
+  </div>
+</div>
+
+      </div>
+      <!-- Information -->
+      <div class="burger-menu__view" data-view="info">
+        <div class="shop-list">
+  <div class="shop-list__shop-head">
+    <button class="shop-list__shop-head-btn-back" data-back="main">
+      <svg width="32" height="34">
+        <use href="img/sprite.svg#header--back_arrow"></use>
+      </svg>
+    </button>
+    <p>Information</p>
+  </div>
+  <ul class="shop-list__shop-list">
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Subscription Cycle & Billing</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Terms & Conditions</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Privacy Policy</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Shipping & Delivery</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Return Policy</a>
+    </li>
+  </ul>
+</div>
+
+      </div>
+      <!-- IProfile -->
+      <div class="burger-menu__view" data-view="profile">
+        <div class="shop-list">
+  <div class="shop-list__shop-head">
+    <button class="shop-list__shop-head-btn-back" data-back="main">
+      <svg width="32" height="34">
+        <use href="img/sprite.svg#header--back_arrow"></use>
+      </svg>
+    </button>
+    <p>Profile</p>
+  </div>
+  <ul class="shop-list__shop-list">
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Subscriptions</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Orders</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Account Overview</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Payment methods</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link" href="#">Change Password</a>
+    </li>
+    <li class="shop-list__shop-item">
+      <a class="shop-list__shop-link shop-list__shop-link-red" href="#"
+        >Sign Out</a
+      >
+    </li>
+  </ul>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="js/main.min.js?_v=20260225231350"></script>
   </body>
 </html>
