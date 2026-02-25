@@ -9,12 +9,10 @@ const initBurgerMenu = (): void => {
   const views = menu.querySelectorAll<HTMLElement>(".burger-menu__view");
 
   let activeView: string = "main";
-  
+
   views.forEach((view) => {
     if (view.dataset.view === "main") view.classList.add("is-active");
   });
-
-  // ---------- Работа с экранами ----------
 
   const showView = (name: string): void => {
     views.forEach((view) => {
@@ -47,7 +45,6 @@ const initBurgerMenu = (): void => {
       }
     });
   };
-  // ---------- Открытие / закрытие ----------
 
   const openMenu = (): void => {
     menu.classList.add("is-open");
@@ -66,8 +63,6 @@ const initBurgerMenu = (): void => {
     menu.classList.contains("is-open") ? closeMenu() : openMenu();
   };
 
-  // ---------- События ----------
-
   burgerBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     toggleMenu();
@@ -78,7 +73,6 @@ const initBurgerMenu = (): void => {
     closeMenu();
   });
 
-  // Делегирование data-open / data-back
   menu.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
 
@@ -95,7 +89,6 @@ const initBurgerMenu = (): void => {
     }
   });
 
-  // Клик вне меню
   document.addEventListener("click", (e) => {
     const target = e.target;
     if (!(target instanceof Node)) return;
@@ -105,7 +98,6 @@ const initBurgerMenu = (): void => {
     }
   });
 
-  // Закрытие при desktop
   const mediaQuery = window.matchMedia("(min-width: 1024px)");
   mediaQuery.addEventListener("change", (e) => {
     if (e.matches) {
