@@ -164,8 +164,8 @@
 
   &__img-block {
     position: relative;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+    // width: 100vw;
+    // margin-left: calc(50% - 50vw);
     @media (min-width: v.$bp-tablet) {
       display: flex;
       justify-content: center;
@@ -197,13 +197,15 @@
   }
 
   &__circle-yellow {
-    position: absolute;
-    top: -3%;
-    left: 110%;
-    border-radius: 100%;
-    background-color: #ffca78;
-    width:0.65px;
-    height: 0.65px;
-    
+    display: none;
+    @media (min-width: v.$bp-laptop-sm) {
+      position: absolute;
+      top: -3%;
+      left: 110%;
+      border-radius: 100%;
+      background-color: #ffca78;
+      width: 0.65px;
+      height: 0.65px;
+    }
   }
 }
