@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="img/logo.svg?v=2" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20260225231350" />
+    <link rel="stylesheet" href="css/style.min.css?_v=20260226161245" />
     <title>Home</title>
 </head>
   <body>
@@ -16,7 +16,7 @@
         <span class="header__btn-open-icon"></span>
         <span class="header__btn-open-icon"></span>
       </button>
-      <a href="/" class="header__logo-link">
+      <a href="index.html" class="header__logo-link">
         <svg width="34" height="40">
           <use href="img/sprite.svg#logo"></use>
         </svg>
@@ -45,7 +45,64 @@
 </header>
 
     <main>
-      
+      <section class="hero">
+  <div class="hero__container container">
+    <div class="hero__content">
+      <div class="hero__text-block">
+        <div class="hero__arc-yellow">
+          <svg width="63" height="76">
+            <use href="img/sprite.svg#hero--ellipse-yellow"></use>
+          </svg>
+        </div>
+        <div class="hero__arc-red">
+          <svg width="140" height="70">
+            <use href="img/sprite.svg#hero--ellipse-red"></use>
+          </svg>
+        </div>
+        <h1 class="hero__title">
+          Find out what <span>vitamins</span> your body needs right now.
+        </h1>
+        <p class="hero__subtitle">
+          Answer a few simple questions and automatically get a personalazed
+          list of vitamins in minutes
+        </p>
+        <div class="hero__btns-wrapper">
+          <a href="quiz.html" class="hero__quiz-link">Take the quiz</a>
+          <a href="catalog.html" class="hero__shop-link"
+            >Go to the shop
+            <svg width="6" height="9">
+              <use href="img/sprite.svg#hero--hero-arrow"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero__img-block">
+        <div class="hero__circle-purple"></div>
+        <picture>
+          <source
+            srcset="img/hero/vitamins-img-des.webp"
+            media="(min-width: 1440px)"
+          />
+          <source
+            srcset="img/hero/vitamins-img-mob-l.webp"
+            media="(min-width: 768px)"
+          />
+          <source
+            srcset="img/hero/vitamins-img-mob-l.webp"
+            media="(min-width: 375px)"
+          />
+          <img
+            src="img/hero/vitamins-img-mob-s.webp"
+            alt="Image Vitamins"
+            
+          />
+        </picture>
+        <div class="hero__circle-yellow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
       
       
       
@@ -235,6 +292,6 @@
   </div>
 </div>
 
-    <script src="js/main.min.js?_v=20260225231350"></script>
+    <script src="js/main.min.js?_v=20260226161245"></script>
   </body>
 </html>

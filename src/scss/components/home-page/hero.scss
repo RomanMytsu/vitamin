@@ -1,0 +1,209 @@
+@use "./utils/variables" as v;
+
+.hero {
+  padding: 40px 0 15px;
+  @media (min-width: v.$bp-tablet) {
+    padding: 60px 0 30px;
+  }
+  @media (min-width: v.$bp-laptop-sm) {
+    padding: 80px 0 40px;
+  }
+
+  &__container {
+    padding: 0 20px;
+    @media (min-width: v.$bp-tablet) {
+      padding: 0 30px;
+    }
+    @media (min-width: v.$bp-laptop-sm) {
+      padding: 0 102px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      padding: 0 202px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @media (min-width: v.$bp-laptop-sm) {
+      flex-direction: row;
+      gap: 60px;
+    }
+  }
+
+  &__text-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: v.$bp-laptop-sm) {
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    font-family: "Effra", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    color: v.$color-black;
+    margin-bottom: 15px;
+    @media (min-width: v.$bp-laptop-sm) {
+      text-align: left;
+      width: 276px;
+    }
+    @media (min-width: v.$bp-laptop) {
+      font-size: 34px;
+      margin-bottom: 25px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      font-size: 56px;
+      margin-bottom: 38px;
+      width: 660px;
+    }
+
+    span {
+      color: #f27e58;
+    }
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    line-height: 1.63;
+    text-align: center;
+    color: #808080;
+    margin-bottom: 20px;
+    max-width: 558px;
+    width: 100%;
+    @media (min-width: v.$bp-laptop-sm) {
+      font-size: 16px;
+      text-align: left;
+      margin-bottom: 28px;
+      width: 372px;
+    }
+    @media (min-width: v.$bp-laptop) {
+      font-size: 18px;
+      margin-bottom: 38px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      margin-bottom: 48px;
+      width: 558px;
+    }
+  }
+
+  &__arc-yellow {
+    position: absolute;
+    top: 62%;
+    left: 85%;
+    @media (min-width: v.$bp-mobile) {
+      top: 64%;
+      left: 83%;
+      svg {
+        width: 76px;
+        height: 76px;
+      }
+    }
+    @media (min-width: v.$bp-tablet) {
+      left: 93%;
+    }
+    @media (min-width: v.$bp-laptop-sm) {
+      transform: rotate(180deg);
+      top: -50%;
+    }
+  }
+
+  &__arc-red {
+    position: absolute;
+    top: 113%;
+    left: -32%;
+    @media (min-width: v.$bp-mobile) {
+      top: 120%;
+      left: -25%;
+    }
+    @media (min-width: v.$bp-tablet) {
+      left: -13%;
+    }
+    @media (min-width: v.$bp-laptop-sm) {
+      top: 90%;
+      left: 91%;
+    }
+  }
+
+  &__btns-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    @media (min-width: v.$bp-laptop-sm) {
+      flex-direction: row;
+    }
+  }
+
+  &__quiz-link {
+    border-radius: 200px;
+    background-color: #6e5ddc;
+    padding: 15px 30px;
+    font-family: "Effra", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+  }
+
+  &__shop-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    font-family: "Effra", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #f27e58;
+  }
+
+  &__img-block {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    @media (min-width: v.$bp-tablet) {
+      display: flex;
+      justify-content: center;
+    }
+    @media (min-width: v.$bp-laptop-sm) {
+      width: auto;
+      margin-left: 0;
+    }
+  }
+
+  &__img-block picture {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__circle-purple {
+    display: none;
+    @media (min-width: v.$bp-laptop-sm) {
+      display: block;
+      position: absolute;
+      top: 33%;
+      left: 55%;
+      border-radius: 100%;
+      background-color: #8172dd;
+      width: 2.7px;
+      height: 2.7px;
+      transform: scale(105);
+    }
+  }
+
+  &__circle-yellow {
+    position: absolute;
+    top: -3%;
+    left: 110%;
+    border-radius: 100%;
+    background-color: #ffca78;
+    width:0.65px;
+    height: 0.65px;
+    
+  }
+}
