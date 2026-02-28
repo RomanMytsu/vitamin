@@ -1,12 +1,15 @@
 @use "./utils/variables" as v;
 
 .hero {
-  padding: 40px 0 15px;
+  padding: 35px 0 15px;
   @media (min-width: v.$bp-tablet) {
     padding: 60px 0 30px;
   }
   @media (min-width: v.$bp-laptop-sm) {
     padding: 80px 0 40px;
+  }
+  @media (min-width: v.$bp-desktop) {
+    padding: 158px 0 0 0;
   }
 
   &__container {
@@ -27,8 +30,10 @@
     flex-direction: column;
     gap: 10px;
     @media (min-width: v.$bp-laptop-sm) {
+      justify-content: space-between;
       flex-direction: row;
-      gap: 60px;
+      gap: 0;
+      align-items: center;
     }
   }
 
@@ -39,6 +44,7 @@
     align-items: center;
     @media (min-width: v.$bp-laptop-sm) {
       align-items: flex-start;
+      margin-bottom: 106px;
     }
   }
 
@@ -47,7 +53,6 @@
     font-size: 24px;
     font-weight: 500;
     text-align: center;
-    color: v.$color-black;
     margin-bottom: 15px;
     @media (min-width: v.$bp-laptop-sm) {
       text-align: left;
@@ -73,9 +78,8 @@
     line-height: 1.63;
     text-align: center;
     color: #808080;
+    letter-spacing: 0.02em;
     margin-bottom: 20px;
-    max-width: 558px;
-    width: 100%;
     @media (min-width: v.$bp-laptop-sm) {
       font-size: 16px;
       text-align: left;
@@ -87,8 +91,9 @@
       margin-bottom: 38px;
     }
     @media (min-width: v.$bp-desktop) {
+      font-size: 20px;
       margin-bottom: 48px;
-      width: 558px;
+      width: 458px;
     }
   }
 
@@ -111,6 +116,14 @@
       transform: rotate(180deg);
       top: -50%;
     }
+    @media (min-width: v.$bp-desktop) {
+      top: -64%;
+      left: 54%;
+      svg {
+        width: 170px;
+        height: 170px;
+      }
+    }
   }
 
   &__arc-red {
@@ -128,15 +141,26 @@
       top: 90%;
       left: 91%;
     }
+    @media (min-width: v.$bp-desktop) {
+      top: 123%;
+      left: 85%;
+      svg {
+        width: 279px;
+        height: 141px;
+      }
+    }
   }
 
   &__btns-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 22px;
     @media (min-width: v.$bp-laptop-sm) {
       flex-direction: row;
+    }
+    @media (min-width: v.$bp-desktop) {
+      gap: 33px;
     }
   }
 
@@ -149,30 +173,45 @@
     font-size: 16px;
     text-align: center;
     color: #fff;
+    @media (min-width: v.$bp-desktop) {
+      padding: 21px 63px 20px;
+      font-family: "Open Sans", sans-serif;
+      font-size: 20px;
+      line-height: 1.63;
+      width: 260px;
+    }
   }
 
   &__shop-link {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 4px;
+    gap: 9px;
     font-family: "Effra", sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
     color: #f27e58;
+    @media (min-width: v.$bp-desktop) {
+      font-size: 20px;
+
+      svg {
+        width: 9px;
+        height: 15px;
+      }
+    }
   }
 
   &__img-block {
     position: relative;
-    // width: 100vw;
-    // margin-left: calc(50% - 50vw);
+    margin: 0 -20px 0 -20px;
     @media (min-width: v.$bp-tablet) {
       display: flex;
       justify-content: center;
+      margin: 0;
     }
-    @media (min-width: v.$bp-laptop-sm) {
-      width: auto;
-      margin-left: 0;
+    @media (min-width: v.$bp-desktop) {
+      margin-right: -93px;
+      margin-top: 105px;
     }
   }
 
@@ -186,26 +225,36 @@
     @media (min-width: v.$bp-laptop-sm) {
       display: block;
       position: absolute;
-      top: 33%;
-      left: 55%;
+      z-index: 1;
       border-radius: 100%;
+      width: clamp(300px, 30vw, 523px);
+      aspect-ratio: 1 / 1;
       background-color: #8172dd;
-      width: 2.7px;
-      height: 2.7px;
-      transform: scale(105);
+      transform: translate(-50%, -50%);
+      top: 41%;
+      left: 55%;
+    }
+    @media (min-width: v.$bp-desktop) {
+      top: 28%;
+      left: 49%;
     }
   }
 
   &__circle-yellow {
     display: none;
     @media (min-width: v.$bp-laptop-sm) {
+      display: block;
       position: absolute;
-      top: -3%;
-      left: 110%;
+      top: -15%;
+      left: 94%;
       border-radius: 100%;
       background-color: #ffca78;
-      width: 0.65px;
-      height: 0.65px;
+      width: clamp(85px, 25vw, 95px);
+      aspect-ratio: 1 / 1;
+    }
+    @media (min-width: v.$bp-desktop) {
+      top: -40%;
+      left: 91%;
     }
   }
 }
