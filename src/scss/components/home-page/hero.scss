@@ -44,6 +44,8 @@
     align-items: center;
     @media (min-width: v.$bp-laptop-sm) {
       align-items: flex-start;
+    }
+    @media (min-width: v.$bp-desktop) {
       margin-bottom: 106px;
     }
   }
@@ -114,10 +116,14 @@
     }
     @media (min-width: v.$bp-laptop-sm) {
       transform: rotate(180deg);
-      top: -50%;
+      top: -87%;
+      left: 54%;
+    }
+    @media (min-width: v.$bp-laptop) {
+      top: -58%;
     }
     @media (min-width: v.$bp-desktop) {
-      top: -64%;
+      top: -63%;
       left: 54%;
       svg {
         width: 170px;
@@ -138,8 +144,11 @@
       left: -13%;
     }
     @media (min-width: v.$bp-laptop-sm) {
-      top: 90%;
-      left: 91%;
+      top: 121%;
+      left: 103%;
+    }
+    @media (min-width: v.$bp-laptop) {
+      left: 130%;
     }
     @media (min-width: v.$bp-desktop) {
       top: 123%;
@@ -251,6 +260,13 @@
       background-color: #ffca78;
       width: clamp(85px, 25vw, 95px);
       aspect-ratio: 1 / 1;
+    }
+    @media (min-width: v.$bp-laptop-sm) {
+      top: -21%;
+      left: 87%;
+    }
+    @media (min-width: v.$bp-laptop) {
+      top: -10%;
     }
     @media (min-width: v.$bp-desktop) {
       top: -40%;

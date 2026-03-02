@@ -1,7 +1,17 @@
 @use "./utils/variables" as v;
 
 .healthy {
+  overflow-x: clip;
   // padding: 0 0 40px 0;
+  @media (min-width: v.$bp-laptop-sm) {
+    padding-top: 80px;
+  }
+  @media (min-width: v.$bp-laptop) {
+    padding-top: 100px;
+  }
+  @media (min-width: v.$bp-desktop) {
+    padding-top: 151px;
+  }
 
   &__container {
     padding: 0 20px;
@@ -21,15 +31,21 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media (min-width: v.$bp-laptop-sm) {
+      flex-direction: row;
+      gap: 31px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      gap: 61px;
+    }
   }
 
   &__left-block {
-    background-image: url(../../../img/healthy/bg-desck.webp);
+    background-image: url(../img/healthy/bg-desck.webp);
     max-width: 1920px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin: 0 auto;
     padding: 70px 20px;
     margin: 0 -20px 0 -20px;
     @media (min-width: v.$bp-mobile-l) {
@@ -38,8 +54,14 @@
     @media (min-width: v.$bp-tablet) {
       padding: 150px 150px;
     }
-    @media (min-width: v.$bp-desktop) {
+    @media (min-width: v.$bp-laptop-sm) {
+      padding: 156px 90px 101px 82px;
+      margin: 0 0 0 -82px;
+    }
+    @media (min-width: v.$bp-laptop) {
       padding: 356px 135px 401px 202px;
+      margin: 0 0 0 -202px;
+      width: 77%;
     }
   }
 
@@ -55,6 +77,14 @@
       width: clamp(60px, 16vw, 139px);
       right: -1%;
     }
+    @media (min-width: v.$bp-laptop-sm) {
+      width: clamp(60px, 10vw, 139px);
+      right: 88%;
+      top: 7%;
+    }
+    @media (min-width: v.$bp-desktop) {
+      right: 96%;
+    }
   }
 
   &__title {
@@ -63,7 +93,11 @@
     font-size: 24px;
     text-align: center;
     color: v.$color-white;
-    @media (min-width: v.$bp-desktop) {
+    @media (min-width: v.$bp-laptop-sm) {
+      font-size: 34px;
+      text-align: left;
+    }
+    @media (min-width: v.$bp-laptop) {
       font-size: 56px;
     }
   }
@@ -71,18 +105,65 @@
   &__left-img {
     position: absolute;
     top: 109%;
-    right: -7%;
+    right: 0;
+    transform: translateX(-78%);
     z-index: 2;
+    @media (min-width: v.$bp-mobile) {
+      transform: translateX(-75%);
+    }
+    @media (min-width: v.$bp-tablet) {
+      transform: translateX(-72%);
+    }
+    @media (min-width: v.$bp-laptop-sm) {
+      top: 57%;
+      transform: translateX(-120%);
+    }
+    @media (min-width: v.$bp-desktop) {
+      top: 72%;
+      transform: translateX(-163%);
+    }
+  }
+
+  &__right-img {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    transform: translateX(8%);
+    z-index: 1;
+    @media (min-width: v.$bp-mobile) {
+      top: 123%;
+      transform: translateX(7%);
+    }
+    @media (min-width: v.$bp-tablet) {
+      transform: translateX(10%);
+    }
+    @media (min-width: v.$bp-laptop-sm) {
+      top: 90%;
+      transform: translateX(-17%);
+    }
+    @media (min-width: v.$bp-desktop) {
+      top: 90%;
+      transform: translateX(-15%);
+    }
   }
 
   &__right-block {
     margin-top: 40px;
+    @media (min-width: v.$bp-laptop) {
+      display: flex;
+      align-items: center;
+      margin-top: 0;
+    }
   }
 
   &__right-list {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 40px;
+    @media (min-width: v.$bp-desktop) {
+      gap: 115px;
+    }
   }
 
   &__right-item {
@@ -90,24 +171,30 @@
     align-items: center;
     flex-direction: row;
     gap: 26px;
+    @media (min-width: v.$bp-laptop) {
+      gap: 90px;
+
+      &:nth-child(1) svg {
+        width: 103px;
+        height: 84px;
+      }
+      &:nth-child(2) svg {
+        width: 88px;
+        height: 97px;
+      }
+      &:nth-child(3) svg {
+        width: 84px;
+        height: 107px;
+      }
+    }
 
     p {
       font-family: "Effra", sans-serif;
       font-weight: 500;
       font-size: 14px;
-      @media (min-width: v.$bp-desktop) {
+      @media (min-width: v.$bp-laptop) {
         font-size: 30px;
       }
-    }
-  }
-
-  &__right-img {
-    position: absolute;
-    top: 120%;
-    right: -7%;
-    z-index: 1;
-    @media (min-width: v.$bp-mobile-l) {
-      top: 123%;
     }
   }
 }
