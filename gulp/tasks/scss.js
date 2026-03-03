@@ -9,30 +9,29 @@ import groupCssMediaQueries from "gulp-group-css-media-queries";
 const sass = gulpSass(dartSass);
 
 export const scss = () => {
-  return (
-    app.gulp
-      .src(app.path.src.scss, { sourcemaps: true })
-      .pipe(app.plugins.replace(/@img\//g, "../img/"))
-      .pipe(
-        sass({
-          outputStyle: "expanded",
-        })
-      )
-      .pipe(groupCssMediaQueries())
-      .pipe(
-        autoprefixer({
-          grid: true,
-          overrideBrowserslist: ["last 10 versions"],
-          cascade: true,
-        })
-      )
-      .pipe(cleanCss())
-      .pipe(
-        rename({
-          extname: ".min.css",
-        })
-      )
-      .pipe(app.gulp.dest(app.path.build.css))
-      .pipe(app.plugins.browsersync.stream())
-  );
+  return app.gulp
+    .src(app.path.src.scss, { sourcemaps: true })
+    .pipe(app.plugins.replace(/@img\//g, "../img/"))
+    .pipe(
+      sass({
+        outputStyle: "expanded",
+        includePaths: ["node_modules"],
+      }),
+    )
+    .pipe(groupCssMediaQueries())
+    .pipe(
+      autoprefixer({
+        grid: true,
+        overrideBrowserslist: ["last 10 versions"],
+        cascade: true,
+      }),
+    )
+    .pipe(cleanCss())
+    .pipe(
+      rename({
+        extname: ".min.css",
+      }),
+    )
+    .pipe(app.gulp.dest(app.path.build.css))
+    .pipe(app.plugins.browsersync.stream());
 };

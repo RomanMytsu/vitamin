@@ -1,0 +1,191 @@
+@use "./utils/variables" as v;
+
+.product {
+  &__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__info-block {
+    position: relative;
+    background-image: url(../img/product/bg.webp);
+    max-width: 1920px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 59px 20px 137px;
+    img {
+      display: none;
+      @media (min-width: v.$bp-laptop) {
+        display: block;
+        position: absolute;
+        top: 83%;
+      }
+      @media (min-width: v.$bp-desktop) {
+        top: 88%;
+      }
+    }
+
+    @media (min-width: v.$bp-laptop) {
+      margin-left: auto;
+      padding: 200px 182px 195px 154px;
+      width: 50%;
+    }
+    @media (min-width: v.$bp-desktop) {
+      padding: 234px 202px 235px 254px;
+    }
+  }
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: v.$bp-desktop) {
+      align-items: baseline;
+    }
+  }
+
+  &__title {
+    font-family: "Effra", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    color: v.$color-white;
+    margin-bottom: 15px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 36px;
+      margin-bottom: 32px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      font-size: 56px;
+      text-align: left;
+    }
+  }
+
+  &__sub-title {
+    font-size: 14px;
+    line-height: 1.63;
+    text-align: center;
+    color: v.$color-white;
+    letter-spacing: 0.03em;
+    margin-bottom: 23px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      font-size: 20px;
+      text-align: left;
+    }
+  }
+
+  &__shop-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 11px;
+    font-family: "Effra", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 16px;
+      svg {
+        width: 9px;
+        height: 15px;
+      }
+    }
+    @media (min-width: v.$bp-desktop) {
+      font-size: 20px;
+    }
+  }
+
+  &__slider-wrapper {
+    position: relative;
+    z-index: 2;
+    margin-top: -97px;
+    width: 100%;
+    overflow: visible;
+    padding: 0 0 0 20px !important;
+    @media (min-width: v.$bp-tablet) {
+      padding: 0 30px !important;
+    }
+    @media (min-width: v.$bp-laptop-sm) {
+      padding: 0 102px !important;
+    }
+    @media (min-width: v.$bp-laptop) {
+      margin-top: -469px;
+      margin-left: -5% !important;
+      padding: 0 0 0 102px !important;
+    }
+    @media (min-width: v.$bp-desktop) {
+      margin-top: -665px;
+      margin-left: 0 !important;
+      padding: 0 0 0 202px !important;
+    }
+  }
+
+  &__card {
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px 16px;
+    width: 100%;
+    max-width: 400px;
+    @media (min-width: v.$bp-desktop) {
+      padding: 64px 30px 40px;
+    }
+    img {
+      margin: 0 auto;
+      margin-bottom: 27px;
+      @media (min-width: v.$bp-desktop) {
+        width: 186px;
+        height: 209px;
+        margin-bottom: 51px;
+      }
+    }
+
+    &-green {
+      background-color: #89d4a7;
+    }
+    &-blue {
+      background-color: v.$goods-purple;
+    }
+
+    &-top-text {
+      font-weight: 600;
+      font-size: 12px;
+      color: v.$color-white;
+      opacity: 0.7;
+      margin-bottom: 10px;
+      @media (min-width: v.$bp-desktop) {
+        font-size: 14px;
+        opacity: 0.5;
+        margin-bottom: 12px;
+      }
+    }
+
+    &-title {
+      font-family: "Effra", sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: v.$color-white;
+      margin-bottom: 21px;
+      @media (min-width: v.$bp-desktop) {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-sub-title {
+      font-size: 14px;
+      color: v.$color-white;
+      opacity: 0.7;
+      letter-spacing: 0.03em;
+      line-height: 1.63;
+      @media (min-width: v.$bp-desktop) {
+        font-size: 16px;
+      }
+    }
+  }
+}

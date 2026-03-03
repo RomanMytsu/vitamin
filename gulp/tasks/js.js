@@ -2,7 +2,6 @@ import webpack from "webpack-stream";
 import WebpackModule from "webpack";
 import dotenv from "dotenv";
 
-// Загрузить переменные окружения из .env файла
 dotenv.config();
 
 export const js = () => {
@@ -19,7 +18,12 @@ export const js = () => {
             {
               test: /\.ts$/,
               exclude: /node_modules/,
-              use: "ts-loader",
+              use: {
+                loader: "ts-loader",
+                options: {
+                  transpileOnly: true,
+                },
+              },
               // use: {
               //   loader: "babel-loader",
               //   options: {
