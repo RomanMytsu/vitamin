@@ -29,3 +29,32 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const reviewsSlider = document.querySelector<HTMLElement>(
+    ".reviews__slider-wrapper",
+  );
+
+  if (!reviewsSlider) return;
+
+  new Swiper(reviewsSlider, {
+    speed: 600,
+    spaceBetween: 10,
+
+    breakpoints: {
+      0: {
+        slidesPerView: 1.0,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      1024: {
+        slidesPerView: 3,
+        enabled: false,
+        spaceBetween: 32,
+      },
+    },
+  });
+});
