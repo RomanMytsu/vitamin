@@ -1,0 +1,148 @@
+@use "./utils/variables" as v;
+
+.footer {
+  position: relative;
+  z-index: 1;
+  background: #faf8f6;
+  &__container {
+    padding: 0 20px;
+    @media (min-width: v.$bp-tablet) {
+      padding: 0 30px;
+    }
+    @media (min-width: v.$bp-laptop-sm) {
+      padding: 0 102px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      padding: 0 158px 0 203px;
+    }
+  }
+
+  &__content-wrappper {
+    padding: 40px 0;
+    display: grid;
+    grid-template-areas:
+      "logo"
+      "nav";
+    gap: 36px;
+    @media (min-width: v.$bp-laptop) {
+      grid-template-areas: "logo nav";
+    }
+
+    @media (min-width: v.$bp-desktop) {
+      padding: 71px 0 74px;
+      grid-template-columns: 1fr 3fr;
+      grid-template-areas: "logo nav";
+      align-items: start;
+      gap: 0;
+    }
+  }
+
+  &__logo-wrapper {
+    grid-area: logo;
+    @media (min-width: v.$bp-laptop) {
+      display: flex;
+      flex-direction: column;
+      gap: 39px;
+      width: 50%;
+    }
+
+    @media (min-width: v.$bp-desktop) {
+      gap: 59px;
+      width: 55%;
+
+      svg {
+        width: 86px;
+        height: 99px;
+      }
+    }
+
+    p {
+      display: none;
+      @media (min-width: v.$bp-laptop) {
+        display: block;
+        font-size: 12px;
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: 12px;
+    opacity: 0.3;
+    @media (min-width: v.$bp-laptop) {
+      display: none;
+    }
+  }
+
+  &__nav-wrapper {
+    grid-area: nav;
+    display: grid;
+    gap: 38px 16px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 8px;
+    @media (min-width: v.$bp-tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (min-width: v.$bp-laptop) {
+      margin-bottom: 0;
+      grid-template-columns: 1fr 206px 250px;
+      justify-content: end;
+      gap: 0 151px;
+      width: 100%;
+    }
+  }
+
+  &__nav-title {
+    font-family: "Effra", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 19px;
+    @media (min-width: v.$bp-desktop) {
+      line-height: 150%;
+    }
+  }
+
+  &__nav-menu:first-child .footer__nav-list {
+    @media (min-width: v.$bp-laptop) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, auto);
+      grid-auto-flow: column;
+      gap: 13px 40px;
+      margin-left: -4px;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    width: 132px;
+    @media (min-width: v.$bp-mobile) {
+      width: 160px;
+    }
+
+    @media (min-width: v.$bp-laptop) {
+      width: auto;
+    }
+    @media (min-width: v.$bp-desktop) {
+      gap: 10px;
+    }
+  }
+
+  &__nav-link {
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: rgba(0, 0, 0, 0.5);
+    @media (min-width: v.$bp-desktop) {
+      line-height: 150%;
+    }
+  }
+
+  &__nav-link-soc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+}

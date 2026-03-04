@@ -2,13 +2,14 @@
 
 .get-ready {
   position: relative;
-  overflow: hidden;
-  padding: 10px 0 120px;
+  overflow: visible;
+  z-index: 2;
+  padding: 10px 0 50px;
   @media (min-width: v.$bp-mobile) {
-    padding: 20px 0 120px;
+    padding: 20px 0 67px;
   }
   @media (min-width: v.$bp-desktop) {
-    padding: 50px 0 120px;
+    padding: 50px 0 103px;
   }
 
   &__container {
@@ -30,12 +31,26 @@
     align-items: center;
   }
 
+  &__arc-red-desck {
+    display: none;
+    @media (min-width: v.$bp-laptop) {
+      display: block;
+    }
+  }
+
+  &__arc-red-mob {
+    @media (min-width: v.$bp-laptop) {
+      display: none;
+    }
+  }
+
   &__arc-red {
     position: absolute;
-    bottom: 14px;
-    right: -52px;
+    bottom: -56px;
+    right: 0;
+    z-index: 3;
     @media (min-width: v.$bp-mobile) {
-      bottom: -1px;
+      bottom: -53px;
     }
 
     @media (min-width: v.$bp-laptop) {
@@ -60,28 +75,39 @@
 
   &__arc-yellow {
     position: absolute;
-    top: -36px;
-    left: -76px;
+    top: -6px;
+    left: 0;
 
     svg {
-      transform: rotate(271deg);
+      transform: rotate(268deg);
+      @media (min-width: v.$bp-mobile) {
+        width: 73px;
+        height: 76px;
+      }
+      @media (min-width: v.$bp-laptop) {
+        transform: rotate(358deg);
+      }
       @media (min-width: v.$bp-desktop) {
         width: 141px;
-        height: 279px;
+        height: 141px;
       }
     }
     @media (min-width: v.$bp-mobile) {
-      top: -30px;
-      left: -66px;
+      top: 8px;
     }
 
     @media (min-width: v.$bp-laptop) {
       top: -30px;
-      left: 96%;
+      left: 95%;
     }
 
     @media (min-width: v.$bp-desktop) {
-      top: -39px;
+      top: 20px;
+      left: 92%;
+    }
+
+    @media (min-width: v.$bp-desktop-1920) {
+      left: 93%;
     }
   }
 
