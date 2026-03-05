@@ -18,8 +18,12 @@
       </div>
       <div class="sign-up__form-content">
         <div class="sign-up__tabs-btns">
-          <buttons class="sign-up__btn active">Regular customer</buttons>
-          <buttons class="sign-up__btn">Wholesale customer</buttons>
+          <buttons class="sign-up__btn" type="button" data-type="regular"
+            >Regular customer</buttons
+          >
+          <buttons class="sign-up__btn" type="button" data-type="wholesale"
+            >Wholesale customer</buttons
+          >
         </div>
         <p class="sign-up__text-or">Sign up with</p>
         <div class="sign-up__register-btns-wrapper">
@@ -39,56 +43,14 @@
             <svg width="32" height="32">
               <use href="@img/sprite.svg#sign-up--facebook"></use>
             </svg>
-             <span>Facebook</span>
+            <span>Facebook</span>
           </button>
         </div>
         <p class="sign-up__or-email">or sign up using your email address...</p>
-        <div class="sign-up__form-wrapper">
-          <form class="sign-up__form" novalidate="novalidete">
-            <div class="sign-up__input-block">
-              <input
-                class="sign-up__input"
-                type="email"
-                name="email"
-                placeholder="Email"
-                id="email"
-              />
-            </div>
-            <div class="sign-up__input-block">
-              <input
-                class="sign-up__input"
-                type="text"
-                name="first-name"
-                placeholder="First Name"
-                id="first-name"
-              />
-            </div>
-            <div class="sign-up__input-block">
-              <input
-                class="sign-up__input"
-                type="text"
-                name="last-name"
-                placeholder="Last Name"
-                id="last-name"
-              />
-            </div>
-            <div class="sign-up__input-block">
-              <input
-                class="sign-up__input"
-                type="password"
-                name="password"
-                placeholder="Password"
-                id="password"
-              />
-            </div>
-            <button type="submit" class="sign-up__btn-form">
-              Create my account
-            </button>
-          </form>
-        </div>
+        <div class="sign-up__form-wrapper"></div>
       </div>
       <p class="sign-up__already-have-acc">
-        Already have an account?
+        Don't have an account?
         <a href="sign-in.html" class="sign-up__already-link">Sign in</a>
       </p>
     </div>

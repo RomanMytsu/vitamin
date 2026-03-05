@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "firebase": "^12.9.0",
+    "just-validate": "^4.3.0",
     "swiper": "^12.0.2"
   }
 }
