@@ -1,142 +1,88 @@
+import { registration } from "./register";
+import { initValidation } from "./validate-field";
+
 type CustomerType = "regular" | "wholesale";
 
-const formContainer = document.querySelector<HTMLDivElement>(
-  ".sign-up__form-wrapper",
-);
-const tabs = document.querySelectorAll<HTMLButtonElement>(".sign-up__btn");
+export function initSignUpForm(): void {
+  const formContainer = document.querySelector<HTMLDivElement>(
+    ".sign-up__form-wrapper",
+  )!;
 
-function renderForm(type: CustomerType): void {
+  const tabs = document.querySelectorAll<HTMLButtonElement>(".sign-up__btn");
+
   if (!formContainer) return;
 
-  const forms: Record<CustomerType, string> = {
+  const formsHTML: Record<CustomerType, string> = {
     regular: `
-      <form class="sign-up__form" novalidate="novalidete">
-            <div class="sign-up__input-block">
-              <input
-                class="sign-up__input"
-                type="email"
-                name="email"
-                placeholder="Email"
-                id="email"
-              />
-            </div>
-            <div class="sign-up__input-block">
-              <input
-                class="sign-up__input"
-                type="text"
-                name="first-name"
-                placeholder="First Name"
-                id="first-name"
-              />
-            </div>
-            <div class="sign-up__input-block">
-              <input
-                class="sign-up__input"
-                type="text"
-                name="last-name"
-                placeholder="Last Name"
-                id="last-name"
-              />
-            </div>
-            <div class="sign-up__input-block">
-              <input
-                class="sign-up__input"
-                type="password"
-                name="password"
-                placeholder="Password"
-                id="password"
-              />
-            </div>
-            <button type="submit" class="sign-up__btn-form">
-              Create my account
-            </button>
-          </form>
+      <form class="sign-up__form" novalidate>
+        <div class="sign-up__input-block">
+          <input class="sign-up__input" type="email" id="email" placeholder="Email"/>
+        </div>
+        <div class="sign-up__input-block">
+          <input class="sign-up__input" type="text" id="first-name" placeholder="First Name"/>
+        </div>
+        <div class="sign-up__input-block">
+          <input class="sign-up__input" type="text" id="last-name" placeholder="Last Name"/>
+        </div>
+        <div class="sign-up__input-block">
+          <input class="sign-up__input" type="password" id="password" placeholder="Password"/>
+        </div>
+        <button type="submit" class="sign-up__btn-form">Create my account</button>
+      </form>
     `,
-
     wholesale: `
-      <form class="sign-up__form" novalidate="novalidete">
-            <div class="sign-up__input-block">
-              <input
-                class="sign-up__input"
-                type="email"
-                name="email"
-                placeholder="Email"
-              />
-            </div>
-            <div class="sign-up__input-block">
-              <input
-                class="sign-up__input"
-                type="text"
-                name="first-name"
-                placeholder="First Name"
-              />
-            </div>
-            <div class="sign-up__input-block">
-              <input
-                class="sign-up__input"
-                type="text"
-                name="last-name"
-                placeholder="Last Name"
-              />
-            </div>
-            <div class="sign-up__input-block">
-              <input
-                class="sign-up__input"
-                type="password"
-                name="password"
-                placeholder="Password"
-              />
-            </div>
-            <button type="submit" class="sign-up__btn-form" disabled>
-              Create my account
-            </button>
-          </form>
+      <form class="sign-up__form" novalidate>
+        <div class="sign-up__input-block">
+          <input class="sign-up__input" type="email" id="email" placeholder="Email"/>
+        </div>
+        <div class="sign-up__input-block">
+          <input class="sign-up__input" type="text" id="first-name" placeholder="First Name"/>
+        </div>
+        <div class="sign-up__input-block">
+          <input class="sign-up__input" type="text" id="last-name" placeholder="Last Name"/>
+        </div>
+        <div class="sign-up__input-block">
+          <input class="sign-up__input" type="password" id="password" placeholder="Password"/>
+        </div>
+        <div class="sign-up__input-block sign-up__file">
+          <label for="permission" class="sign-up__file-label">
+            <span class="sign-up__file-text">Permission</span>
+            <span class="sign-up__upload-btn">Upload</span>
+          </label>
+          <input class="sign-up__file-input" id="permission" type="file" name="permission"/>
+        </div>
+        <span id="permission-name" class="sign-up__file-name"></span>
+        <button type="submit" class="sign-up__btn-form">Create my account</button>
+      </form>
     `,
   };
 
-  formContainer.innerHTML = forms[type];
+  function renderForm(type: CustomerType) {
+    formContainer.innerHTML = formsHTML[type];
 
-  if (type === "wholesale") initWholesaleValidation();
-}
+    initValidation();
 
-function initWholesaleValidation(): void {
-  if (!formContainer) return;
+    const form = formContainer.querySelector<HTMLFormElement>(".sign-up__form");
+    if (!form) return;
 
-  const form = formContainer.querySelector<HTMLFormElement>(".sign-up__form");
-  const inputs = form?.querySelectorAll<HTMLInputElement>(".sign-up__input");
-  const button = form?.querySelector<HTMLButtonElement>(".sign-up__btn-form");
+    registration(form);
+  }
 
-  if (!form || !inputs || !button) return;
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const type = tab.dataset.type as CustomerType;
+      if (!type) return;
 
-  const checkInputs = () => {
-    const allFilled = Array.from(inputs).every(
-      (input) => input.value.trim() !== "",
-    );
-    button.disabled = !allFilled;
-  };
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
 
-  inputs.forEach((input) => input.addEventListener("input", checkInputs));
-
-  requestAnimationFrame(checkInputs);
-}
-
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const type = tab.dataset.type;
-
-    if (type !== "regular" && type !== "wholesale") return;
-
-    tabs.forEach((btn) => btn.classList.remove("active"));
-    tab.classList.add("active");
-
-    renderForm(type);
+      renderForm(type);
+    });
   });
-});
 
-renderForm("regular");
+  renderForm("regular");
 
-const regularBtn = document.querySelector<HTMLButtonElement>(
-  '[data-type="regular"]',
-);
-
-regularBtn?.classList.add("active");
+  tabs.forEach((t) =>
+    t.dataset.type === "regular" ? t.classList.add("active") : null,
+  );
+}
