@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg?v=2" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.min.css?_v=20260311172601" />
+  <title>Quiz</title>
+</head>
+
+  <body>
+    <header class="quiz-header">
+  <div class="quiz-header__wrapper">
+    <a href="/" class="quiz-header__logo">
+      <svg class="quiz-header__icon" width="42" height="50">
+        <use href="img/sprite.svg#quiz--quiz-logo"></use>
+      </svg>
+      <svg class="quiz-header__icon-mob" width="34" height="40">
+        <use href="img/sprite.svg#quiz--quiz-logo-mob"></use>
+      </svg>
+    </a>
+    <div class="quiz-header__progress">
+      <span id="quiz-current"></span>/<span id="quiz-total"></span>
+    </div>
+  </div>
+</header>
+
+    <section class="quiz" id="quiz">
+  <form id="quiz-form">
+    <!-- form-1 -->
+    <div class="quiz__step">
+      <div class="quiz__right-block">
+        <h2 class="quiz__title">What’s your first name?</h2>
+      </div>
+      <div class="quiz__answer-wrapper">
+        <div class="quiz__input">
+          <label for="quizName">First Name</label>
+          <input type="text" name="quizName" id="quizName" />
+          <button type="button" class="quiz__next-btn">
+            <svg width="8" height="12">
+              <use href="img/sprite.svg#quiz--back_arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="circle quiz__form1-circle"></div>
+ <div class="elipse quiz__form1-elipse1"></div> <div class="elipse quiz__form1-elipse2"></div>
+      </div>
+      <button class="quiz__btn-back" type="button">
+        <svg width="9" height="15">
+          <use href="img/sprite.svg#quiz--back_arrow"></use>
+        </svg>
+        Back
+      </button>
+    </div>
+    <!-- form-2 -->
+    <div class="quiz__step">
+      <div class="quiz__right-block">
+        <h2 class="quiz__title">Do you smoke?</h2>
+      </div>
+      <div class="quiz__answer-wrapper">
+        <div class="quiz__radio-btn small">
+          <label class="quiz__option">
+            <input type="radio" name="smoke" value="yes" />
+            <span>Yes</span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="smoke" value="no" />
+            <span>No</span>
+          </label>
+        </div>
+        <div class="elipse quiz__form2-elipse1"></div> <div class="circle quiz__form2-circle"></div>
+
+      </div>
+      <button class="quiz__btn-back" type="button">
+        <svg width="9" height="15">
+          <use href="img/sprite.svg#quiz--back_arrow"></use>
+        </svg>
+        Back
+      </button>
+    </div>
+    <!-- form-3 -->
+    <div class="quiz__step">
+      <div class="quiz__right-block">
+        <h2 class="quiz__title">What is your eating habits?</h2>
+      </div>
+      <div class="quiz__answer-wrapper">
+        <div class="quiz__radio-btn">
+          <label class="quiz__option small-option">
+            <input type="radio" name="eating" value="vegan" />
+            <span>Vegan diet</span>
+          </label>
+          <label class="quiz__option small-option">
+            <input type="radio" name="eating" value="vegetarian" />
+            <span>Vegetarian diet</span>
+          </label>
+          <label class="quiz__option small-option">
+            <input type="radio" name="eating" value="normal" />
+            <span>
+              My diet is generally healthy and includes animal protein, fish and
+              veggies
+            </span>
+          </label>
+          <label class="quiz__option small-option">
+            <input type="radio" name="eating" value="bad" />
+            <span>My diet includes fast food and soft drinks</span>
+          </label>
+        </div>
+        <div class="circle quiz__form3-circle"></div>
+ <div class="elipse quiz__form3-elipse1"></div>
+      </div>
+      <button class="quiz__btn-back" type="button">
+        <svg width="9" height="15">
+          <use href="img/sprite.svg#quiz--back_arrow"></use>
+        </svg>
+        Back
+      </button>
+    </div>
+    <!-- form-4 -->
+    <div class="quiz__step">
+      <div class="quiz__right-block">
+        <h2 class="quiz__title">
+          How frequently do you consume alcoholic beverages?
+        </h2>
+      </div>
+      <div class="quiz__answer-wrapper">
+        <div class="quiz__radio-btn">
+          <label class="quiz__option small-option">
+            <input type="radio" name="alco" value="low" />
+            <span>≤ 3 times per week</span>
+          </label>
+          <label class="quiz__option small-option">
+            <input type="radio" name="alco" value="avarage" />
+            <span>4 - 7 times per week</span>
+          </label>
+          <label class="quiz__option small-option">
+            <input type="radio" name="alco" value="high" />
+            <span>7+ times per week</span>
+          </label>
+        </div>
+        <div class="elipse quiz__form4-elipse1"></div> <div class="circle quiz__form4-circle"></div>
+
+      </div>
+      <button class="quiz__btn-back" type="button">
+        <svg width="9" height="15">
+          <use href="img/sprite.svg#quiz--back_arrow"></use>
+        </svg>
+        Back
+      </button>
+    </div>
+    <!-- form-5 -->
+    <div class="quiz__step">
+      <div class="quiz__right-block">
+        <h2 class="quiz__title">
+          How frequently do you have cold/flu symptoms?
+        </h2>
+      </div>
+      <div class="quiz__answer-wrapper">
+        <div class="quiz__radio-btn">
+          <label class="quiz__option small-option">
+            <input type="radio" name="flu" value="low" />
+            <span>≤ 2 per year</span>
+          </label>
+          <label class="quiz__option small-option">
+            <input type="radio" name="flu" value="avarage" />
+            <span>3 - 5 times per year</span>
+          </label>
+          <label class="quiz__option small-option">
+            <input type="radio" name="flu" value="high" />
+            <span>5+ times per week</span>
+          </label>
+        </div>
+        <div class="elipse quiz__form5-elipse1"></div> <div class="circle quiz__form5-circle"></div>
+
+      </div>
+      <button class="quiz__btn-back" type="button">
+        <svg width="9" height="15">
+          <use href="img/sprite.svg#quiz--back_arrow"></use>
+        </svg>
+        Back
+      </button>
+    </div>
+    <!-- form-6 -->
+    <div class="quiz__step">
+      <div class="quiz__right-block">
+        <h2 class="quiz__title">Describe your stress level</h2>
+      </div>
+      <div class="quiz__answer-wrapper">
+        <div class="quiz__radio-btn">
+          <label class="quiz__option small-option">
+            <input type="radio" name="stress" value="low" />
+            <span>I feel calm and relaxed most of the time</span>
+          </label>
+          <label class="quiz__option small-option">
+            <input type="radio" name="stress" value="avarage" />
+            <span>I get nerevous from time to time</span>
+          </label>
+          <label class="quiz__option small-option">
+            <input type="radio" name="stress" value="high" />
+            <span>I’m under a lot of stress most of the time</span>
+          </label>
+        </div>
+        <div class="circle quiz__form6-circle"></div>
+ <div class="elipse quiz__form6-elipse1"></div>
+        <div class="quiz__eclipse-yellow"></div>
+      </div>
+      <button class="quiz__btn-back" type="button">
+        <svg width="9" height="15">
+          <use href="img/sprite.svg#quiz--back_arrow"></use>
+        </svg>
+        Back
+      </button>
+    </div>
+    <!-- form-7 -->
+    <div class="quiz__step">
+      <div class="quiz__right-block">
+        <h2 class="quiz__title">
+          Have you ever been diagnosted with high blood glucose level?
+        </h2>
+      </div>
+      <div class="quiz__answer-wrapper">
+        <div class="quiz__radio-btn small">
+          <label class="quiz__option">
+            <input type="radio" name="glucose" value="yes" />
+            <span>Yes</span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="glucose" value="no" />
+            <span>No</span>
+          </label>
+        </div>
+        <div class="elipse quiz__form7-elipse1"></div> <div class="circle quiz__form7-circle"></div>
+
+      </div>
+      <button class="quiz__btn-back" type="button">
+        <svg width="9" height="15">
+          <use href="img/sprite.svg#quiz--back_arrow"></use>
+        </svg>
+        Back
+      </button>
+    </div>
+    <!-- form-8 -->
+    <div class="quiz__step">
+      <div class="quiz__right-block">
+        <h2 class="quiz__title">Tell us what you want to focus on</h2>
+      </div>
+      <div class="quiz__answer-wrapper">
+        <div class="quiz__radio-btn big-btn">
+          <label class="quiz__option">
+            <input type="radio" name="focus" value="weight" />
+            <span>Weight managment</span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="focus" value="stress" />
+            <span>Stress relief</span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="focus" value="immune" />
+            <span>Immune boost</span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="focus" value="specific" />
+            <span>Need to solve a specific problem</span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="focus" value="basic" />
+            <span>I need a bassic kit for a daily intake</span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="focus" value="all" />
+            <span>All in one</span>
+          </label>
+        </div>
+        <div class="elipse quiz__form8-elipse1"></div> <div class="circle quiz__form8-circle"></div>
+
+      </div>
+      <button class="quiz__btn-back" type="button">
+        <svg width="9" height="15">
+          <use href="img/sprite.svg#quiz--back_arrow"></use>
+        </svg>
+        Back
+      </button>
+    </div>
+    <!-- form-9 -->
+    <div class="quiz__step">
+      <div class="quiz__right-block">
+        <h2 class="quiz__title">What’s your email address?</h2>
+      </div>
+      <div class="quiz__answer-wrapper">
+        <div class="quiz__input">
+          <label for="quizEmail">Email</label>
+          <input type="email" name="quizEmail" id="quizEmail" />
+          <button type="button" class="quiz__next-btn">
+            <svg width="8" height="12">
+              <use href="img/sprite.svg#quiz--back_arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="circle quiz__form1-circle"></div>
+ <div class="elipse quiz__form1-elipse1"></div> <div class="elipse quiz__form1-elipse2"></div>
+      </div>
+      <button class="quiz__btn-back" type="button">
+        <svg width="9" height="15">
+          <use href="img/sprite.svg#quiz--back_arrow"></use>
+        </svg>
+        Back
+      </button>
+    </div>
+  </form>
+</section>
+
+
+    <script src="js/main.min.js?_v=20260311172601"></script>
+  </body>
+</html>
