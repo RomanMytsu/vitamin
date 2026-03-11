@@ -1,31 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="img/logo.svg?v=2" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.min.css?_v=20260311172601" />
-  <title>Quiz</title>
-</head>
-
-  <body>
-    <header class="quiz-header">
-  <div class="quiz-header__wrapper">
-    <a href="/" class="quiz-header__logo">
-      <svg class="quiz-header__icon" width="42" height="50">
-        <use href="img/sprite.svg#quiz--quiz-logo"></use>
-      </svg>
-      <svg class="quiz-header__icon-mob" width="34" height="40">
-        <use href="img/sprite.svg#quiz--quiz-logo-mob"></use>
-      </svg>
-    </a>
-    <div class="quiz-header__progress">
-      <span id="quiz-current"></span>/<span id="quiz-total"></span>
-    </div>
-  </div>
-</header>
-
-    <section class="quiz" id="quiz">
+<section class="quiz" id="quiz">
   <form id="quiz-form">
     <!-- form-1 -->
     <div class="quiz__step">
@@ -38,16 +11,18 @@
           <input type="text" name="quizName" id="quizName" />
           <button type="button" class="quiz__next-btn">
             <svg width="8" height="12">
-              <use href="img/sprite.svg#quiz--back_arrow"></use>
+              <use href="@img/sprite.svg#quiz--back_arrow"></use>
             </svg>
           </button>
         </div>
-        <div class="circle quiz__form1-circle"></div>
- <div class="elipse quiz__form1-elipse1"></div> <div class="elipse quiz__form1-elipse2"></div>
+        @@include("html/components/circle.html", { "class": "quiz__form1-circle"
+        }) @@include("html/components/elipse.html", { "class":
+        "quiz__form1-elipse1" }) @@include("html/components/elipse.html", {
+        "class": "quiz__form1-elipse2" })
       </div>
       <button class="quiz__btn-back" type="button">
         <svg width="9" height="15">
-          <use href="img/sprite.svg#quiz--back_arrow"></use>
+          <use href="@img/sprite.svg#quiz--back_arrow"></use>
         </svg>
         Back
       </button>
@@ -68,12 +43,13 @@
             <span>No</span>
           </label>
         </div>
-        <div class="elipse quiz__form2-elipse1"></div> <div class="circle quiz__form2-circle"></div>
-
+        @@include("html/components/elipse.html", { "class":
+        "quiz__form2-elipse1" }) @@include("html/components/circle.html", {
+        "class": "quiz__form2-circle" })
       </div>
       <button class="quiz__btn-back" type="button">
         <svg width="9" height="15">
-          <use href="img/sprite.svg#quiz--back_arrow"></use>
+          <use href="@img/sprite.svg#quiz--back_arrow"></use>
         </svg>
         Back
       </button>
@@ -105,12 +81,13 @@
             <span>My diet includes fast food and soft drinks</span>
           </label>
         </div>
-        <div class="circle quiz__form3-circle"></div>
- <div class="elipse quiz__form3-elipse1"></div>
+        @@include("html/components/circle.html", { "class": "quiz__form3-circle"
+        }) @@include("html/components/elipse.html", { "class":
+        "quiz__form3-elipse1" })
       </div>
       <button class="quiz__btn-back" type="button">
         <svg width="9" height="15">
-          <use href="img/sprite.svg#quiz--back_arrow"></use>
+          <use href="@img/sprite.svg#quiz--back_arrow"></use>
         </svg>
         Back
       </button>
@@ -137,12 +114,13 @@
             <span>7+ times per week</span>
           </label>
         </div>
-        <div class="elipse quiz__form4-elipse1"></div> <div class="circle quiz__form4-circle"></div>
-
+        @@include("html/components/elipse.html", { "class":
+        "quiz__form4-elipse1" }) @@include("html/components/circle.html", {
+        "class": "quiz__form4-circle" })
       </div>
       <button class="quiz__btn-back" type="button">
         <svg width="9" height="15">
-          <use href="img/sprite.svg#quiz--back_arrow"></use>
+          <use href="@img/sprite.svg#quiz--back_arrow"></use>
         </svg>
         Back
       </button>
@@ -169,12 +147,13 @@
             <span>5+ times per week</span>
           </label>
         </div>
-        <div class="elipse quiz__form5-elipse1"></div> <div class="circle quiz__form5-circle"></div>
-
+        @@include("html/components/elipse.html", { "class":
+        "quiz__form5-elipse1" }) @@include("html/components/circle.html", {
+        "class": "quiz__form5-circle" })
       </div>
       <button class="quiz__btn-back" type="button">
         <svg width="9" height="15">
-          <use href="img/sprite.svg#quiz--back_arrow"></use>
+          <use href="@img/sprite.svg#quiz--back_arrow"></use>
         </svg>
         Back
       </button>
@@ -199,13 +178,14 @@
             <span>I’m under a lot of stress most of the time</span>
           </label>
         </div>
-        <div class="circle quiz__form6-circle"></div>
- <div class="elipse quiz__form6-elipse1"></div>
+        @@include("html/components/circle.html", { "class": "quiz__form6-circle"
+        }) @@include("html/components/elipse.html", { "class":
+        "quiz__form6-elipse1" })
         <div class="quiz__eclipse-yellow"></div>
       </div>
       <button class="quiz__btn-back" type="button">
         <svg width="9" height="15">
-          <use href="img/sprite.svg#quiz--back_arrow"></use>
+          <use href="@img/sprite.svg#quiz--back_arrow"></use>
         </svg>
         Back
       </button>
@@ -228,12 +208,13 @@
             <span>No</span>
           </label>
         </div>
-        <div class="elipse quiz__form7-elipse1"></div> <div class="circle quiz__form7-circle"></div>
-
+        @@include("html/components/elipse.html", { "class":
+        "quiz__form7-elipse1" }) @@include("html/components/circle.html", {
+        "class": "quiz__form7-circle" })
       </div>
       <button class="quiz__btn-back" type="button">
         <svg width="9" height="15">
-          <use href="img/sprite.svg#quiz--back_arrow"></use>
+          <use href="@img/sprite.svg#quiz--back_arrow"></use>
         </svg>
         Back
       </button>
@@ -270,12 +251,13 @@
             <span>All in one</span>
           </label>
         </div>
-        <div class="elipse quiz__form8-elipse1"></div> <div class="circle quiz__form8-circle"></div>
-
+        @@include("html/components/elipse.html", { "class":
+        "quiz__form8-elipse1" }) @@include("html/components/circle.html", {
+        "class": "quiz__form8-circle" })
       </div>
       <button class="quiz__btn-back" type="button">
         <svg width="9" height="15">
-          <use href="img/sprite.svg#quiz--back_arrow"></use>
+          <use href="@img/sprite.svg#quiz--back_arrow"></use>
         </svg>
         Back
       </button>
@@ -291,24 +273,21 @@
           <input type="email" name="quizEmail" id="quizEmail" />
           <button type="button" class="quiz__next-btn">
             <svg width="8" height="12">
-              <use href="img/sprite.svg#quiz--back_arrow"></use>
+              <use href="@img/sprite.svg#quiz--back_arrow"></use>
             </svg>
           </button>
         </div>
-        <div class="circle quiz__form1-circle"></div>
- <div class="elipse quiz__form1-elipse1"></div> <div class="elipse quiz__form1-elipse2"></div>
+        @@include("html/components/circle.html", { "class": "quiz__form1-circle"
+        }) @@include("html/components/elipse.html", { "class":
+        "quiz__form1-elipse1" }) @@include("html/components/elipse.html", {
+        "class": "quiz__form1-elipse2" })
       </div>
       <button class="quiz__btn-back" type="button">
         <svg width="9" height="15">
-          <use href="img/sprite.svg#quiz--back_arrow"></use>
+          <use href="@img/sprite.svg#quiz--back_arrow"></use>
         </svg>
         Back
       </button>
     </div>
   </form>
 </section>
-
-
-    <script src="js/main.min.js?_v=20260311172601"></script>
-  </body>
-</html>

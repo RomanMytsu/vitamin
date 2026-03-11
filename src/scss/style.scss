@@ -1,15 +1,24 @@
 @use "./utils/variables.scss";
-@use "./base.scss";
+@use "./utils/base.scss";
+@use "./fonts/fonts.scss";
 
-@use "./components/base/header.scss";
-@use "./components/base/burger/burger-menu.scss";
-@use "./components/base/burger/burger-shop-list.scss";
-@use "./components/home-page/hero.scss";
-@use "./components/home-page/healthy.scss";
-@use "./components/home-page/tell-us.scss";
-@use "./components/home-page/product.scss";
-@use "./components/base/reviews.scss";
-@use "./components/home-page/get-ready.scss";
-@use "./components/base/footer.scss";
+@use "./components/circle.scss";
+@use "./components/elipse.scss";
 
-@use "./components/sign-up/sign-up.scss";
+@use "./components/header.scss";
+@use "./components/burger/burger-menu.scss";
+@use "./components/burger/burger-shop-list.scss";
+@use "./pages/home-page/hero.scss";
+@use "./pages/home-page/healthy.scss";
+@use "./pages/home-page/tell-us.scss";
+@use "./pages/home-page/product.scss";
+@use "./components/reviews.scss";
+@use "./pages/home-page/get-ready.scss";
+@use "./components/footer.scss";
+
+@use "./pages/sign-up/sign-up.scss";
+
+@use "./pages/quiz/quiz.scss";
+@use "./pages/quiz/quiz-header.scss";
+
+@use "./pages/profile/profile-sidebar.scss";

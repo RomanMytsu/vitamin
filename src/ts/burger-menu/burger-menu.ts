@@ -1,4 +1,4 @@
-const initBurgerMenu = (): void => {
+export const initBurgerMenu = (): void => {
   const burgerBtn = document.querySelector<HTMLButtonElement>(".open-menu");
   const closeBtn = document.querySelector<HTMLButtonElement>(".close-menu");
   const menu = document.querySelector<HTMLElement>(".burger-menu");
@@ -105,5 +105,3 @@ const initBurgerMenu = (): void => {
     }
   });
 };
-
-document.addEventListener("DOMContentLoaded", initBurgerMenu);

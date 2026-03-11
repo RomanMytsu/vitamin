@@ -1,0 +1,40 @@
+@use "./utils/variables" as v;
+
+.quiz-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px 20px;
+    @media (min-width: v.$bp-laptop-sm) {
+      padding: 30px 35px;
+    }
+  }
+
+  &__icon {
+    display: none;
+    @media (min-width: v.$bp-laptop-sm) {
+      display: block;
+    }
+  }
+
+  &__icon-mob {
+    @media (min-width: v.$bp-laptop-sm) {
+      display: none;
+    }
+  }
+
+  &__progress {
+    font-weight: 600;
+    text-align: right;
+    @media (min-width: v.$bp-desktop) {
+      font-size: 30px;
+    }
+  }
+}

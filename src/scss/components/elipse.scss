@@ -1,0 +1,16 @@
+.elipse {
+  position: absolute;
+  width: 280px;
+  height: 145px;
+  overflow: hidden;
+  z-index: 2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0 0 300px 300px;
+    border: 58px solid #ffca78;
+    border-top: none;
+  }
+}

@@ -56,7 +56,7 @@ export function registration(form: HTMLFormElement): void {
 
       await setDoc(doc(db, "users", userCredential.user.uid), userData);
       showToast("Registration successful!", 3000, "success");
-      window.location.href = "/profile.html";
+      window.location.href = "profile.html";
     } catch (error: any) {
       console.error("Registration error:", error);
 
