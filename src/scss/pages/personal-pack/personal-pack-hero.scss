@@ -1,0 +1,131 @@
+@use "./utils/variables" as v;
+
+.personal-pack-hero {
+  position: relative;
+  overflow-x: clip;
+  padding-top: 45px;
+  @media (min-width: v.$bp-desktop) {
+    padding-top: 94px;
+  }
+
+  &__container {
+    padding: 0 20px;
+    @media (min-width: v.$bp-tablet) {
+      padding: 0 30px;
+    }
+    @media (min-width: v.$bp-laptop-sm) {
+      padding: 0 102px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      padding: 0 202px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    @media (min-width: v.$bp-desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-family: "Effra", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    max-width: 185px;
+    margin-bottom: 30px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 36px;
+      max-width: 427px;
+      margin-bottom: 60px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      font-size: 50px;
+      max-width: 682px;
+    }
+  }
+
+  &__text {
+    font-family: "Effra", sans-serif;
+    font-weight: 500;
+    margin-bottom: 20px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 26px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__sub-title {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    max-width: 919px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 18px;
+      line-height: 1.56;
+    }
+  }
+
+  &__circle {
+    width: 61px;
+    height: 61px;
+    bottom: -92px;
+    right: 34px;
+    @media (min-width: v.$bp-desktop) {
+      width: 122px;
+      height: 122px;
+      bottom: -146px;
+      right: 481px;
+    }
+  }
+
+  &__elipse1 {
+    width: 163px;
+    height: 73px;
+    top: -17px;
+    right: 46px;
+    transform: rotateX(-180deg);
+    &::before {
+      border: 30px solid #ffca78;
+      border-top: none;
+      clip-path: inset(0 0 0 50%);
+      @media (min-width: v.$bp-desktop) {
+        border: 58px solid #ffca78;
+        border-top: none;
+      }
+    }
+    @media (min-width: v.$bp-laptop) {
+      right: 556px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      width: 280px;
+      height: 145px;
+      top: -48px;
+      right: 657px;
+    }
+  }
+
+  &__elipse2 {
+    width: 163px;
+    height: 73px;
+    right: -110px;
+    top: 119px;
+    @media (min-width: v.$bp-desktop) {
+      right: -98px;
+      top: 174px;
+      width: 280px;
+      height: 145px;
+    }
+
+    &::before {
+      border: 30px solid #f6906e;
+      border-top: none;
+      @media (min-width: v.$bp-desktop) {
+        border: 58px solid #f6906e;
+        border-top: none;
+      }
+    }
+  }
+}

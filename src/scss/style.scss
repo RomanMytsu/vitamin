@@ -1,6 +1,6 @@
 @use "./utils/variables.scss";
 @use "./utils/base.scss";
-@use "./fonts/fonts.scss";
+@use "./fonts.scss";
 
 @use "./components/circle.scss";
 @use "./components/elipse.scss";
@@ -21,4 +21,5 @@
 @use "./pages/quiz/quiz.scss";
 @use "./pages/quiz/quiz-header.scss";
 
-@use "./pages/profile/profile-sidebar.scss";
+@use "./pages/personal-pack/personal-pack.scss";
+@use "./pages/personal-pack/personal-pack-hero.scss";

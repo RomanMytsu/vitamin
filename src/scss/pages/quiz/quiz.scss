@@ -99,7 +99,7 @@
     .just-validate-error-label {
       display: block;
       font-size: 12px;
-      @media (min-width: v.$bp-desktop){
+      @media (min-width: v.$bp-desktop) {
         font-size: 18px;
       }
     }
@@ -298,10 +298,10 @@
   }
 
   &__form1 {
-    display: none;
-    @media (min-width: v.$bp-laptop-sm) {
-      display: block;
-      &-circle {
+    &-circle {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         width: 156px;
         height: 156px;
         left: 46px;
@@ -309,16 +309,19 @@
         background-color: #f6906e;
       }
     }
-
     &-elipse1 {
-      bottom: 0;
-      right: 39px;
-      transform: rotateX(-180deg) rotateY(-180deg);
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
+        bottom: 0;
+        right: 39px;
+        transform: rotateX(-180deg) rotateY(-180deg);
 
-      &::before {
-        border: 48px solid #ffca78;
-        border-top: none;
-        clip-path: inset(0% 0 0 50%);
+        &::before {
+          border: 48px solid #ffca78;
+          border-top: none;
+          clip-path: inset(0% 0 0 50%);
+        }
       }
     }
 
@@ -339,17 +342,21 @@
   }
 
   &__form2 {
-    display: none;
-    @media (min-width: v.$bp-laptop-sm) {
-      display: block;
-      &-circle {
+    &-circle {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         width: 85px;
         height: 85px;
         right: 98px;
         bottom: 134px;
       }
+    }
 
-      &-elipse1 {
+    &-elipse1 {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         left: -40px;
         top: 108px;
         &::before {
@@ -362,18 +369,22 @@
   }
 
   &__form3 {
-    display: none;
-    @media (min-width: v.$bp-laptop-sm) {
-      display: block;
-      &-circle {
+    &-circle {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         width: 100px;
         height: 100px;
         right: 55px;
         top: 149px;
         background-color: #f6906e;
       }
+    }
 
-      &-elipse1 {
+    &-elipse1 {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         transform: rotate(-90deg);
         bottom: -8px;
         left: -78px;
@@ -389,10 +400,10 @@
   }
 
   &__form4 {
-    display: none;
-    @media (min-width: v.$bp-laptop-sm) {
-      display: block;
-      &-elipse1 {
+    &-elipse1 {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         transform: rotate(-90deg) rotateX(180deg);
         top: 0;
         right: 60px;
@@ -404,8 +415,12 @@
           border-top: none;
         }
       }
+    }
 
-      &-circle {
+    &-circle {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         width: 177px;
         height: 177px;
         bottom: 141px;
@@ -415,10 +430,10 @@
   }
 
   &__form5 {
-    display: none;
-    @media (min-width: v.$bp-laptop-sm) {
-      display: block;
-      &-elipse1 {
+    &-elipse1 {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         top: 148px;
         left: -5px;
 
@@ -428,8 +443,12 @@
           clip-path: inset(0% 0 0 50%);
         }
       }
+    }
 
-      &-circle {
+    &-circle {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         width: 308px;
         height: 308px;
         background-color: #f6906e;
@@ -440,17 +459,21 @@
   }
 
   &__form6 {
-    display: none;
-    @media (min-width: v.$bp-laptop-sm) {
-      display: block;
-      &-circle {
+    &-circle {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         width: 154px;
         height: 154px;
         right: 114px;
         top: 161px;
       }
+    }
 
-      &-elipse1 {
+    &-elipse1 {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         left: 79px;
         bottom: 93px;
         transform: rotateY(-180deg);
@@ -465,17 +488,21 @@
   }
 
   &__form7 {
-    display: none;
-    @media (min-width: v.$bp-laptop-sm) {
-      display: block;
-      &-elipse1 {
+    &-elipse1 {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         right: -140px;
         width: 360px;
         height: 181px;
         top: 103px;
       }
+    }
 
-      &-circle {
+    &-circle {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         width: 113px;
         height: 113px;
         bottom: 83px;
@@ -486,10 +513,10 @@
   }
 
   &__form8 {
-    display: none;
-    @media (min-width: v.$bp-laptop-sm) {
-      display: block;
-      &-elipse1 {
+    &-elipse1 {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         left: -131px;
         top: 160px;
         @media (min-width: v.$bp-desktop) {
@@ -503,8 +530,12 @@
           clip-path: inset(0% 0 0 50%);
         }
       }
+    }
 
-      &-circle {
+    &-circle {
+      display: none;
+      @media (min-width: v.$bp-laptop-sm) {
+        display: block;
         width: 148px;
         height: 148px;
         bottom: 52px;

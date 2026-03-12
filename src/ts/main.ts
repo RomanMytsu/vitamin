@@ -3,6 +3,7 @@ import { initAuthLink } from "./home-page/header";
 import { initSwiper } from "./home-page/product-swiper";
 import { initSignUpForm } from "./sign-up/rendering-form";
 import { initQuiz } from "./quiz/quiz";
+import { initPersonalPack } from "./personal-pack/personal-pack";
 
 document.addEventListener("DOMContentLoaded", async () => {
   initBurgerMenu();
@@ -10,4 +11,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   initSignUpForm();
   initAuthLink();
   initQuiz();
+  initPersonalPack();
 });
