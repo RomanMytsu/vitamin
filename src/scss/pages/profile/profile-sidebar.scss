@@ -1,5 +1,9 @@
 @use "./utils/variables" as v;
 
+.profile-main {
+//   display: grid;
+//   grid-template-columns: 260px 1fr;
+}
+
 .profile-sidebar {
-    display: none;
 }

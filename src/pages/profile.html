@@ -3,7 +3,9 @@
   @@include('html/components/head.html', { title: 'Profile' })
   <body>
     @@include('html/components/header.html')
-    <main>@@include('html/pages/profile/profile-sidebar.html')</main>
+    <main class="profile-main">
+      @@include('html/pages/profile/profile-sidebar.html')
+    </main>
     @@include('html/components/footer.html')
     @@include('html/components/burger/burger-menu.html')
     <script src="js/main.min.js"></script>

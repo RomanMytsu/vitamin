@@ -1,4 +1,5 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { FirebaseError } from "firebase/app";
 import { auth, db } from "../firebase/firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { showToast } from "./../toast/toast";
@@ -57,20 +58,25 @@ export function registration(form: HTMLFormElement): void {
       await setDoc(doc(db, "users", userCredential.user.uid), userData);
       showToast("Registration successful!", 3000, "success");
       window.location.href = "profile.html";
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Registration error:", error);
 
       let message = "Registration failed. Please try again.";
-      switch (error.code) {
-        case "auth/email-already-in-use":
-          message = "This email is already registered.";
-          break;
-        case "auth/invalid-email":
-          message = "The email address is not valid.";
-          break;
-        case "auth/weak-password":
-          message = "Password is too weak. Minimum 6 characters.";
-          break;
+
+      if (error instanceof FirebaseError) {
+        switch (error.code) {
+          case "auth/email-already-in-use":
+            message = "This email is already registered.";
+            break;
+
+          case "auth/invalid-email":
+            message = "The email address is not valid.";
+            break;
+
+          case "auth/weak-password":
+            message = "Password is too weak. Minimum 6 characters.";
+            break;
+        }
       }
 
       showToast(message);

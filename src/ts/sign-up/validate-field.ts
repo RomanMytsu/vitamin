@@ -12,7 +12,7 @@ export function initValidation(): void {
       {
         rule: Rules.CustomRegexp,
         value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i,
-        errorMessage: "Email must contain only lowercase letters, numbers",
+        errorMessage: "Email must only lowercase letters",
       },
       {
         rule: Rules.MaxLength,
@@ -40,7 +40,7 @@ export function initValidation(): void {
       {
         rule: Rules.CustomRegexp,
         value: /^[a-zA-Zа-яА-ЯёЁіІїЇєЄ'`\-\s]+$/,
-        errorMessage: "Only letters and symbols (' - `) are allowed",
+        errorMessage: "Only letters are allowed",
       },
       {
         rule: Rules.MaxLength,

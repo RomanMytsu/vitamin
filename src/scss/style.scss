@@ -17,6 +17,10 @@
 @use "./components/footer.scss";
 
 @use "./pages/sign-up/sign-up.scss";
+@use "./pages/sign-in/sign-in.scss";
+@use "./pages/pass-recovery/pass-recovery.scss";
+
+@use "./pages/profile/profile-sidebar.scss";
 
 @use "./pages/quiz/quiz.scss";
 @use "./pages/quiz/quiz-header.scss";

@@ -7,10 +7,6 @@ export function initAuthLink(): void {
   if (!profileLink) return;
 
   onAuthStateChanged(auth, (user) => {
-    if (user) {
-      profileLink.href = "profile.html";
-    } else {
-      profileLink.href = "sign-up.html";
-    }
+    profileLink.href = user ? "profile.html" : "sign-up.html";
   });
 }
