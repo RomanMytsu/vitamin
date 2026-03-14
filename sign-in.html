@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg?v=2" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.min.css?_v=20260314212209" />
+  <title>Sign-in</title>
+</head>
+
+  <body>
+    <section class="sign-in">
+  <div class="sign-in__container container">
+    <div class="sign-in__content">
+      <div class="sign-in__nav">
+        <a href="index.html" class="sign-in__logo-link">
+          <svg width="42" height="50">
+            <use href="img/sprite.svg#logo"></use>
+          </svg>
+        </a>
+        <div class="sign-in__mob-nav">
+          <a href="index.html" class="sign-in__mob-nav-back">
+            <svg width="32" height="34">
+              <use href="img/sprite.svg#sign-up--back_arrow"></use>
+            </svg>
+          </a>
+          <p>Account</p>
+        </div>
+      </div>
+      <div class="sign-in__form-content">
+        <p class="sign-in__text-or">Sign in with email</p>
+        <p class="sign-in__text">Please enter your e-mail and password:</p>
+        <div class="sign-in__form-wrapper">
+          <form class="sign-in__form" id="sign-in-form">
+            <input type="email" id="email" placeholder="Email" required />
+            <div class="sign-in__password-wrapper">
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+              />
+              <a href="pass-recovery.html" class="sign-in__password-recovery"
+                >Forgot password?</a
+              >
+            </div>
+            <button class="sign-in__btn-form" type="submit">Sign In</button>
+          </form>
+        </div>
+        <p class="sign-in__text-bottom">or sign in with...</p>
+        <div class="sign-in__register-btns-wrapper">
+          <button class="sign-in__btn-soc">
+            <svg width="32" height="32">
+              <use href="img/sprite.svg#sign-up--google"></use>
+            </svg>
+            <span>Google</span>
+          </button>
+          <button class="sign-in__btn-soc">
+            <svg width="32" height="32">
+              <use href="img/sprite.svg#sign-up--apple"></use>
+            </svg>
+            <span>Apple</span>
+          </button>
+          <button class="sign-in__btn-soc">
+            <svg width="32" height="32">
+              <use href="img/sprite.svg#sign-up--facebook"></use>
+            </svg>
+            <span>Facebook</span>
+          </button>
+        </div>
+      </div>
+      <p class="sign-in__already-have-acc">
+        Don't have an account?
+        <a href="sign-up.html" class="sign-up__already-link"> Create one</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+    <script src="js/main.min.js?_v=20260314212209"></script>
+  </body>
+</html>
