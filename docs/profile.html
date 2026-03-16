@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="img/logo.svg?v=2" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.min.css?_v=20260314212209" />
+  <link rel="stylesheet" href="css/style.min.css?_v=20260316190424" />
   <title>Profile</title>
 </head>
 
@@ -45,32 +45,66 @@
   </div>
 </header>
 
-    <main class="profile-main">
+    <main class="profile">
       <aside class="profile-sidebar">
   <nav class="profile-sidebar__nav">
     <ul class="profile-sidebar__list">
       <li class="profile-sidebar__item">
-        <button class="profile-sidebar__btn">Subscriptions</button>
+        <button class="profile-sidebar__btn" data-page="subscriptions">
+          Subscriptions
+        </button>
       </li>
       <li class="profile-sidebar__item">
-        <button class="profile-sidebar__btn">Orders</button>
+        <button class="profile-sidebar__btn" data-page="orders">Orders</button>
       </li>
       <li class="profile-sidebar__item">
-        <button class="profile-sidebar__btn">Account Overview</button>
+        <button class="profile-sidebar__btn" data-page="overview">
+          Account Overview
+        </button>
       </li>
       <li class="profile-sidebar__item">
-        <button class="profile-sidebar__btn">Payment methods</button>
+        <button class="profile-sidebar__btn" data-page="payment">
+          Payment methods
+        </button>
       </li>
       <li class="profile-sidebar__item">
-        <button class="profile-sidebar__btn">Change Password</button>
+        <button class="profile-sidebar__btn" data-page="password">
+          Change Password
+        </button>
       </li>
       <li class="profile-sidebar__item">
-        <button class="profile-sidebar__btn">Sign Out</button>
+        <button class="profile-sidebar__btn signout" id="sign-out">
+          Sign Out
+        </button>
       </li>
     </ul>
   </nav>
 </aside>
 
+      <div class="profile__content">
+        <section class="profile__page" data-page="subscriptions">
+          <div class="profile-sub__container container">
+  <h2 class="profile__page-title">Subscriptions</h2>
+  <div class="profile-sub__content" id="subscriptions"></div>
+</div>
+
+        </section>
+        <section class="profile__page" data-page="orders">
+          <h2 class="profile__page-title">Orders</h2>
+
+        </section>
+        <section class="profile__page" data-page="overview">
+          <h2 class="profile__page-title">Account Overview</h2>
+
+        </section>
+        <section class="profile__page" data-page="payment">
+          <h2 class="profile__page-title">Payment methods</h2>
+        </section>
+        <section class="profile__page" data-page="password">
+          <h2 class="profile__page-title">Change Password</h2>
+
+        </section>
+      </div>
     </main>
     <footer class="footer">
   <div class="footer__container container">
@@ -334,9 +368,12 @@
       <a class="shop-list__shop-link" href="#">Change Password</a>
     </li>
     <li class="shop-list__shop-item">
-      <a class="shop-list__shop-link shop-list__shop-link-red" href="#"
-        >Sign Out</a
+      <button
+        class="shop-list__shop-link shop-list__shop-link-red"
+        id="sign-out"
       >
+        Sign Out
+      </button>
     </li>
   </ul>
 </div>
@@ -346,6 +383,6 @@
   </div>
 </div>
 
-    <script src="js/main.min.js?_v=20260314212209"></script>
+    <script src="js/main.min.js?_v=20260316190424"></script>
   </body>
 </html>

@@ -1,0 +1,154 @@
+@use "./utils/variables" as v;
+
+.profile-sub {
+  &__container {
+    padding: 0 20px;
+    @media (min-width: v.$bp-tablet) {
+      padding: 0 30px;
+    }
+    @media (min-width: v.$bp-laptop-sm) {
+      padding: 0;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    @media (min-width: v.$bp-laptop) {
+      gap: 20px;
+    }
+  }
+
+  &__sub-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 16px;
+    background-color: #faf8f6;
+    padding: 16px 20px 24px;
+    @media (min-width: v.$bp-mobile-l) {
+      flex-direction: row;
+      gap: 21px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      padding: 30px 40px;
+      gap: 31px;
+    }
+  }
+
+  &__image-wrapper {
+    border-radius: 8px;
+    padding: 10px 60px;
+    margin-bottom: 20px;
+    @media (min-width: v.$bp-mobile-l) {
+      padding: 20px 10px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      padding: 29px 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__text-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    padding-bottom: 23px;
+    @media (min-width: v.$bp-desktop) {
+      padding-bottom: 25px;
+      align-items: center;
+    }
+  }
+
+  &__category {
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 5px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 14px;
+    }
+  }
+
+  &__title {
+    font-family: "Effra", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 20px;
+    }
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 25px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 18px;
+      margin-top: 35px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 23px;
+    @media (min-width: v.$bp-mobile-l) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @media (min-width: v.$bp-desktop) {
+      padding-top: 25px;
+    }
+  }
+
+  &__interval {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 2px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 16px;
+    }
+  }
+
+  &__btn {
+    font-family: "Effra", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    color: v.$red;
+    border: 2px solid rgba(211, 45, 44, 0.2);
+    border-radius: 100px;
+    background-color: transparent;
+    padding: 15px 0;
+    margin-top: 20px;
+    max-width: 280px;
+    width: 100%;
+    transition: all 0.4s ease;
+
+    @media (min-width: v.$bp-mobile-l) {
+      max-width: 164px;
+      margin-top: 0;
+    }
+
+    &:hover {
+      background-color: v.$red;
+      color: v.$color-white;
+    }
+  }
+}

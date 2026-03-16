@@ -1,0 +1,45 @@
+@use "./utils/variables" as v;
+
+.category--vitamins {
+  color: v.$goods-purple-text;
+}
+.category--minerals {
+  color: v.$goods-mint-text;
+}
+.category--prenatal-vitamins {
+  color: v.$goods-pink-text;
+}
+.category--pain {
+  color: v.$goods-blue-text;
+}
+.category--antioxidants {
+  color: v.$goods-orange-text;
+}
+.category--loss {
+  color: v.$goods-green-text;
+}
+.category--probiotics {
+  color: v.$goods-red-text;
+}
+
+.category-bg--vitamins {
+  background-color: v.$goods-purple;
+}
+.category-bg--minerals {
+  background-color: v.$goods-mint;
+}
+.category-bg--prenatal-vitamins {
+  background-color: v.$goods-pink;
+}
+.category-bg--pain {
+  background-color: v.$goods-blue;
+}
+.category-bg--antioxidants {
+  background-color: v.$goods-orange;
+}
+.category-bg--loss {
+  background-color: v.$goods-green;
+}
+.category-bg--probiotics {
+  background-color: v.$goods-red;
+}

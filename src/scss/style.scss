@@ -1,4 +1,5 @@
 @use "./utils/variables.scss";
+@use "./utils/category-styles.scss";
 @use "./utils/base.scss";
 @use "./fonts.scss";
 
@@ -20,7 +21,9 @@
 @use "./pages/sign-in/sign-in.scss";
 @use "./pages/pass-recovery/pass-recovery.scss";
 
+@use "./pages/profile/profile.scss";
 @use "./pages/profile/profile-sidebar.scss";
+@use "./pages/profile/profile-sub.scss";
 
 @use "./pages/quiz/quiz.scss";
 @use "./pages/quiz/quiz-header.scss";

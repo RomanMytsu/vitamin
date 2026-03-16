@@ -6,6 +6,9 @@ import { initQuiz } from "./quiz/quiz";
 import { initPersonalPack } from "./personal-pack/personal-pack";
 import { initSignInForm } from "./sign-in/sign-in";
 import { initPasswordRecovery } from "./pass-recovery/pass-recovery";
+import { initLogout } from "./sign-out/sign-out";
+import { initProfileRouter } from "./profile/profile-sidebar";
+import { initSubscriptions } from "./profile/profile-subscriptions";
 
 document.addEventListener("DOMContentLoaded", async () => {
   initBurgerMenu();
@@ -13,7 +16,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   initSignUpForm();
   initSignInForm();
   initAuthLink();
+  initLogout();
   initPasswordRecovery();
   initQuiz();
   initPersonalPack();
+  initProfileRouter();
+  initSubscriptions();
 });

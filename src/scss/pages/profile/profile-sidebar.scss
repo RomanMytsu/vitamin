@@ -1,9 +1,32 @@
 @use "./utils/variables" as v;
 
-.profile-main {
-//   display: grid;
-//   grid-template-columns: 260px 1fr;
-}
-
 .profile-sidebar {
+  display: none;
+  @media (min-width: v.$bp-laptop-sm) {
+    display: block;
+    margin-top: -12px;
+    margin-left: -5px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btn {
+    font-family: "Effra", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 3.2;
+    background-color: transparent;
+    border: none;
+
+    &.signout {
+      color: v.$red;
+    }
+
+    &.active {
+      font-weight: 700;
+    }
+  }
 }
