@@ -1,1 +1,68 @@
-<h2 class="profile__page-title">Account Overview</h2>
+<div class="profile-overview__container container">
+  <div class="profile-overview__title-wrapper">
+    <h2 class="profile__page-title overview">Account Overview</h2>
+    <p class="profile-overview__text">Regular customer</p>
+  </div>
+  <form class="profile-overview__form" id="form-overview">
+    <div class="profile-overview__form-wrapper">
+      <div class="profile-overview__field">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="firstName" />
+      </div>
+      <div class="profile-overview__field">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" name="lastName" />
+      </div>
+      <div class="profile-overview__field">
+        <label for="address1">Address Line 1</label>
+        <input type="text" id="address1" name="address1" />
+      </div>
+      <div class="profile-overview__field">
+        <label for="address2">Address Line 2</label>
+        <input type="text" id="address2" name="address2" />
+      </div>
+      <div class="profile-overview__field">
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" />
+      </div>
+      <div class="profile-overview__field-wrapper">
+        <div class="profile-overview__field">
+          <label for="state">State / Province</label>
+          <div class="profile-overview__custom-select-wrapper">
+            <select
+              class="profile-overview__custom-select"
+              type="select"
+              id="state"
+              name="state"
+            >
+              <option value="NY">NY</option>
+              <option value="CA">CA</option>
+              <option value="TX">TX</option>
+            </select>
+          </div>
+        </div>
+        <div class="profile-overview__field">
+          <label for="zip">ZIP / Postal Code</label>
+          <input type="text" id="zip" name="zip" />
+        </div>
+      </div>
+      <div class="profile-overview__field">
+        <label for="city">Email</label>
+        <input type="email" id="email" name="email" />
+      </div>
+      <div class="profile-overview__field">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" />
+        <span class="profile-overview__error" id="phone-error"></span>
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="profile-overview__btn"
+      id="profile-overview-btn"
+      disabled
+    >
+      Save
+    </button>
+  </form>
+</div>

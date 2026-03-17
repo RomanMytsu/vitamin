@@ -1,7 +1,7 @@
 import { signOut } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
 import { auth } from "../firebase/firebase";
-import { showToast } from "../toast/toast";
+import { showToast } from "../utils/toast/toast";
 
 export function initLogout(): void {
   const logoutButton = document.querySelector<HTMLButtonElement>("#sign-out");

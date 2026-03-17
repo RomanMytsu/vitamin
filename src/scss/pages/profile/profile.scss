@@ -13,14 +13,25 @@
     gap: 138px;
   }
 
-  &__content {
-    padding: 45px 0 56px;
-    @media (min-width: v.$bp-laptop-sm) {
-      padding: 0;
-    }
-  }
   &__page {
     display: none;
+
+    &.subscriptions {
+      padding: 45px 0 56px;
+      @media (min-width: v.$bp-laptop-sm) {
+        padding: 0;
+      }
+    }
+
+    &.overview {
+      padding: 45px 0 56px;
+      @media (min-width: v.$bp-laptop-sm) {
+        padding: 0;
+      }
+      @media (min-width: v.$bp-laptop) {
+        width: 920px;
+      }
+    }
 
     &.active {
       display: block;
@@ -37,6 +48,10 @@
       @media (min-width: v.$bp-desktop) {
         font-size: 36px;
         margin-bottom: 40px;
+      }
+
+      &.overview {
+        margin-bottom: 0;
       }
     }
   }

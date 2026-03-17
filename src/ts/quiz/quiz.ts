@@ -1,4 +1,7 @@
-import { initValidation, quizValidator } from "./../sign-up/validate-field";
+import {
+  initValidation,
+  quizValidator,
+} from "../utils/validate-form/validate-field";
 
 type QuizStep = HTMLElement;
 

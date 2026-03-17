@@ -9,6 +9,7 @@ import { initPasswordRecovery } from "./pass-recovery/pass-recovery";
 import { initLogout } from "./sign-out/sign-out";
 import { initProfileRouter } from "./profile/profile-sidebar";
 import { initSubscriptions } from "./profile/profile-subscriptions";
+import { initProfileUpdate } from "./profile/profile-overview";
 
 document.addEventListener("DOMContentLoaded", async () => {
   initBurgerMenu();
@@ -22,4 +23,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   initPersonalPack();
   initProfileRouter();
   initSubscriptions();
+  initProfileUpdate();
 });
