@@ -20,7 +20,7 @@ export function showToast(
   }).showToast();
 }
 
-export function showToastSuccess() {
+export function showToastSuccess(message: string) {
   const checkIcon = `
     <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" clip-rule="evenodd" d="M20 1.50892L7.28471 14L0 6.84375L1.536 5.33483L7.28471 10.9822L18.464 0L20 1.50892Z" fill="white" />
@@ -36,6 +36,7 @@ export function showToastSuccess() {
     duration: 4000,
     gravity: "top",
     position: "center",
+    text: message,
     style: {
       background: "#a2c94f",
       borderRadius: "12px",
@@ -52,5 +53,15 @@ export function showToastSuccess() {
       boxSizing: "border-box",
       gap: "15px",
     },
+  }).showToast();
+}
+
+export function showToastError(message: string = "Error") {
+  Toastify({
+    text: message,
+    duration: 4000,
+    gravity: "top",
+    position: "right",
+    backgroundColor: "linear-gradient(to right, #ff5f6d, #ff0000)",
   }).showToast();
 }

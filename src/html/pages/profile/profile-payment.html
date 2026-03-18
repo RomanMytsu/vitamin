@@ -1,1 +1,56 @@
-<h2 class="profile__page-title">Payment methods</h2>
+<div class="profile-payment__container container">
+  <h2 class="profile__page-title">Payment methods</h2>
+  <div class="profile-payment__wrapper">
+    <form class="profile-payment__form" id="profile-payment-form" novalidate>
+      <div class="profile-payment__content">
+        <img
+          src="@img/profile/img-card.webp"
+          alt="image-card"
+          class="profile-payment__img"
+          width="674px"
+          height="336px"
+          loading="lazy"
+        />
+        <div class="profile-payment__fields-wrapper">
+          <div class="profile-payment__field number">
+            <label for="payment-card">Card Number</label>
+            <input
+              type="text"
+              id="payment-card"
+              name="payment-card"
+              placeholder="Card Number"
+            />
+          </div>
+          <div class="profile-payment__field-wrapper">
+            <div class="profile-payment__field expiration">
+              <label for="payment-expiration">Expiration</label>
+              <input
+                type="text"
+                id="payment-expiration"
+                name="payment-expiration"
+                placeholder="MM/YY"
+              />
+            </div>
+            <div class="profile-payment__field cvc">
+              <label for="payment-cvc">CVC</label>
+              <input
+                type="password"
+                id="payment-cvc"
+                name="payment-cvc"
+                placeholder="CVC"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="profile-payment__btn"
+        type="submit"
+        id="payment-btn"
+        disabled
+      >
+        Save
+      </button>
+    </form>
+  </div>
+</div>

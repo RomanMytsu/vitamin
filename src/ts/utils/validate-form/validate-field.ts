@@ -1,6 +1,9 @@
 import JustValidate from "just-validate";
 import {
   addressRules,
+  cardCvcRules,
+  cardExpirationRules,
+  cardNumberRules,
   cityRules,
   emailRules,
   nameRules,
@@ -44,4 +47,19 @@ export function initProfileValidator(): JustValidate | null {
   profileValidator.addField("#email", emailRules);
 
   return profileValidator;
+}
+
+export function paymentFormValidator(): JustValidate | null {
+  const paymentForm = document.querySelector<HTMLFormElement>(
+    "#profile-payment-form",
+  );
+  if (!paymentForm) return null;
+
+  const paymentValidator = new JustValidate(paymentForm);
+
+  paymentValidator.addField("#payment-card", cardNumberRules);
+  paymentValidator.addField("#payment-expiration", cardExpirationRules);
+  paymentValidator.addField("#payment-cvc", cardCvcRules);
+
+  return paymentValidator;
 }

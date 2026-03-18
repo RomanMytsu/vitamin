@@ -2,7 +2,7 @@ import parsePhoneNumberFromString from "libphonenumber-js";
 import { updateDocument } from "../api/firestore-utils";
 import { auth } from "../firebase/firebase";
 import { initProfileValidator } from "../utils/validate-form/validate-field";
-import { showToastSuccess } from "../utils/toast/toast";
+import { showToastError, showToastSuccess } from "../utils/toast/toast";
 
 type UserProfile = {
   firstName: string;
@@ -86,12 +86,21 @@ export function initProfileUpdate(): void {
       data.phone = formattedPhone;
     }
 
-    await updateDocument<UserProfile>("users", user.uid, data);
-
-    showToastSuccess();
-    form.reset();
-
     button.disabled = true;
-    button.classList.remove("active");
+
+    try {
+      await updateDocument<UserProfile>("users", user.uid, data);
+      showToastSuccess("Changes successfully saved");
+      form.reset();
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Failed to save changes. Please try again.";
+      showToastError(message);
+      button.disabled = false;
+    } finally {
+      button.classList.remove("active");
+    }
   });
 }

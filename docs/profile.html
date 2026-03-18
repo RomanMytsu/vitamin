@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="img/logo.svg?v=2" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.min.css?_v=20260317155623" />
+  <link rel="stylesheet" href="css/style.min.css?_v=20260318160644" />
   <title>Profile</title>
 </head>
 
@@ -46,7 +46,7 @@
 </header>
 
     <main class="profile">
-      <aside class="profile-sidebar">
+        <aside class="profile-sidebar">
   <nav class="profile-sidebar__nav">
     <ul class="profile-sidebar__list">
       <li class="profile-sidebar__item">
@@ -81,20 +81,23 @@
   </nav>
 </aside>
 
-      <div class="profile__content">
-        <section class="profile__page subscriptions" data-page="subscriptions">
-          <div class="profile-sub__container container">
+        <div class="profile__content">
+          <section
+            class="profile__page subscriptions"
+            data-page="subscriptions"
+          >
+            <div class="profile-sub__container container">
   <h2 class="profile__page-title">Subscriptions</h2>
   <div class="profile-sub__content" id="subscriptions"></div>
 </div>
 
-        </section>
-        <section class="profile__page orders" data-page="orders">
-          <h2 class="profile__page-title">Orders</h2>
+          </section>
+          <section class="profile__page orders" data-page="orders">
+            <h2 class="profile__page-title">Orders</h2>
 
-        </section>
-        <section class="profile__page overview" data-page="overview">
-          <div class="profile-overview__container container">
+          </section>
+          <section class="profile__page overview" data-page="overview">
+            <div class="profile-overview__container container">
   <div class="profile-overview__title-wrapper">
     <h2 class="profile__page-title overview">Account Overview</h2>
     <p class="profile-overview__text">Regular customer</p>
@@ -163,15 +166,71 @@
   </form>
 </div>
 
-        </section>
-        <section class="profile__page payment" data-page="payment">
-          <h2 class="profile__page-title">Payment methods</h2>
-        </section>
-        <section class="profile__page password" data-page="password">
-          <h2 class="profile__page-title">Change Password</h2>
-
-        </section>
+          </section>
+          <section class="profile__page payment" data-page="payment">
+            <div class="profile-payment__container container">
+  <h2 class="profile__page-title">Payment methods</h2>
+  <div class="profile-payment__wrapper">
+    <form class="profile-payment__form" id="profile-payment-form" novalidate>
+      <div class="profile-payment__content">
+        <img
+          src="img/profile/img-card.webp"
+          alt="image-card"
+          class="profile-payment__img"
+          width="674px"
+          height="336px"
+          loading="lazy"
+        />
+        <div class="profile-payment__fields-wrapper">
+          <div class="profile-payment__field number">
+            <label for="payment-card">Card Number</label>
+            <input
+              type="text"
+              id="payment-card"
+              name="payment-card"
+              placeholder="Card Number"
+            />
+          </div>
+          <div class="profile-payment__field-wrapper">
+            <div class="profile-payment__field expiration">
+              <label for="payment-expiration">Expiration</label>
+              <input
+                type="text"
+                id="payment-expiration"
+                name="payment-expiration"
+                placeholder="MM/YY"
+              />
+            </div>
+            <div class="profile-payment__field cvc">
+              <label for="payment-cvc">CVC</label>
+              <input
+                type="password"
+                id="payment-cvc"
+                name="payment-cvc"
+                placeholder="CVC"
+              />
+            </div>
+          </div>
+        </div>
       </div>
+      <button
+        class="profile-payment__btn"
+        type="submit"
+        id="payment-btn"
+        disabled
+      >
+        Save
+      </button>
+    </form>
+  </div>
+</div>
+
+          </section>
+          <section class="profile__page password" data-page="password">
+            <h2 class="profile__page-title">Change Password</h2>
+
+          </section>
+        </div>
     </main>
     <footer class="footer">
   <div class="footer__container container">
@@ -268,7 +327,6 @@
     <div class="burger-menu">
   <div class="burger-menu__container container">
     <div class="burger-menu__views">
-      <!-- MAIN -->
       <div class="burger-menu__view" data-view="main">
         <div class="burger-menu__head">
           <button class="burger-menu__close close-menu">
@@ -319,7 +377,6 @@
           </ul>
         </div>
       </div>
-      <!-- SHOP -->
       <div class="burger-menu__view" data-view="shop">
         <div class="shop-list">
   <div class="shop-list__shop-head">
@@ -376,7 +433,6 @@
 </div>
 
       </div>
-      <!-- Information -->
       <div class="burger-menu__view" data-view="info">
         <div class="shop-list">
   <div class="shop-list__shop-head">
@@ -407,7 +463,6 @@
 </div>
 
       </div>
-      <!-- IProfile -->
       <div class="burger-menu__view" data-view="profile">
         <div class="shop-list">
   <div class="shop-list__shop-head">
@@ -450,6 +505,6 @@
   </div>
 </div>
 
-    <script src="js/main.min.js?_v=20260317155623"></script>
+    <script src="js/main.min.js?_v=20260318160644"></script>
   </body>
 </html>

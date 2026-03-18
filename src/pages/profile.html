@@ -4,24 +4,27 @@
   <body>
     @@include('html/components/header.html')
     <main class="profile">
-      @@include('html/pages/profile/profile-sidebar.html')
-      <div class="profile__content">
-        <section class="profile__page subscriptions" data-page="subscriptions">
-          @@include('html/pages/profile/profile-subscriptions.html')
-        </section>
-        <section class="profile__page orders" data-page="orders">
-          @@include('html/pages/profile/profile-orders.html')
-        </section>
-        <section class="profile__page overview" data-page="overview">
-          @@include('html/pages/profile/profile-overview.html')
-        </section>
-        <section class="profile__page payment" data-page="payment">
-          @@include('html/pages/profile/profile-payment.html')
-        </section>
-        <section class="profile__page password" data-page="password">
-          @@include('html/pages/profile/profile-password.html')
-        </section>
-      </div>
+        @@include('html/pages/profile/profile-sidebar.html')
+        <div class="profile__content">
+          <section
+            class="profile__page subscriptions"
+            data-page="subscriptions"
+          >
+            @@include('html/pages/profile/profile-subscriptions.html')
+          </section>
+          <section class="profile__page orders" data-page="orders">
+            @@include('html/pages/profile/profile-orders.html')
+          </section>
+          <section class="profile__page overview" data-page="overview">
+            @@include('html/pages/profile/profile-overview.html')
+          </section>
+          <section class="profile__page payment" data-page="payment">
+            @@include('html/pages/profile/profile-payment.html')
+          </section>
+          <section class="profile__page password" data-page="password">
+            @@include('html/pages/profile/profile-password.html')
+          </section>
+        </div>
     </main>
     @@include('html/components/footer.html')
     @@include('html/components/burger/burger-menu.html')

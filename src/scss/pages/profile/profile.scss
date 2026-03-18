@@ -33,6 +33,16 @@
       }
     }
 
+    &.payment {
+      padding: 45px 0 64px;
+      @media (min-width: v.$bp-laptop-sm) {
+        padding: 0;
+      }
+      @media (min-width: v.$bp-laptop) {
+        width: 920px;
+      }
+    }
+
     &.active {
       display: block;
     }

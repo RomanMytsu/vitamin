@@ -10,7 +10,6 @@ export const nameRules = [
   { rule: Rules.MaxLength, value: 50, errorMessage: "Max 50 characters" },
 ];
 
-
 export const emailRules = [
   { rule: Rules.Required, errorMessage: "Enter your email" },
   {
@@ -57,5 +56,32 @@ export const zipRules = [
     rule: Rules.CustomRegexp,
     value: /^[0-9]{5}(-[0-9]{4})?$/,
     errorMessage: "Invalid ZIP code",
+  },
+];
+
+export const cardNumberRules = [
+  { rule: Rules.Required, errorMessage: "Card number is required" },
+  {
+    rule: Rules.CustomRegexp,
+    value: /^(?:\d{4}[-\s]?){3}\d{4}$/,
+    errorMessage: "Enter a valid 16-digit card number",
+  },
+];
+
+export const cardExpirationRules = [
+  { rule: Rules.Required, errorMessage: "Expiration date is required" },
+  {
+    rule: Rules.CustomRegexp,
+    value: /^(0[1-9]|1[0-2])\/\d{2}$/,
+    errorMessage: "Use MM/YY format",
+  },
+];
+
+export const cardCvcRules = [
+  { rule: Rules.Required, errorMessage: "CVC is required" },
+  {
+    rule: Rules.CustomRegexp,
+    value: /^\d{3}$/,
+    errorMessage: "CVC must be 3 digits",
   },
 ];

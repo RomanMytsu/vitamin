@@ -10,6 +10,7 @@ import { initLogout } from "./sign-out/sign-out";
 import { initProfileRouter } from "./profile/profile-sidebar";
 import { initSubscriptions } from "./profile/profile-subscriptions";
 import { initProfileUpdate } from "./profile/profile-overview";
+import { initPaymentUpdate } from "./profile/profile-payment";
 
 document.addEventListener("DOMContentLoaded", async () => {
   initBurgerMenu();
@@ -24,4 +25,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   initProfileRouter();
   initSubscriptions();
   initProfileUpdate();
+  initPaymentUpdate();
 });
