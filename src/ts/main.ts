@@ -11,6 +11,7 @@ import { initProfileRouter } from "./profile/profile-sidebar";
 import { initSubscriptions } from "./profile/profile-subscriptions";
 import { initProfileUpdate } from "./profile/profile-overview";
 import { initPaymentUpdate } from "./profile/profile-payment";
+import { initPasswordUpdate } from "./profile/profile-password";
 
 document.addEventListener("DOMContentLoaded", async () => {
   initBurgerMenu();
@@ -26,4 +27,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   initSubscriptions();
   initProfileUpdate();
   initPaymentUpdate();
+  initPasswordUpdate();
 });

@@ -63,3 +63,17 @@ export function paymentFormValidator(): JustValidate | null {
 
   return paymentValidator;
 }
+
+export function changePasswordValidator(): JustValidate | null {
+  const passwordForm =
+    document.querySelector<HTMLFormElement>("#profile-password");
+  if (!passwordForm) return null;
+
+  const passworValidator = new JustValidate(passwordForm);
+
+  passworValidator.addField("#current-password", passwordRules);
+  passworValidator.addField("#new-password", passwordRules);
+  passworValidator.addField("#confirm-password", passwordRules);
+
+  return passworValidator;
+}
