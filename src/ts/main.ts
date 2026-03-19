@@ -1,17 +1,17 @@
-import { initBurgerMenu } from "./burger-menu/burger-menu";
-import { initAuthLink } from "./home-page/auth-link";
-import { initSwiper } from "./home-page/product-swiper";
-import { initSignUpForm } from "./sign-up/rendering-form";
-import { initQuiz } from "./quiz/quiz";
-import { initPersonalPack } from "./personal-pack/personal-pack";
-import { initSignInForm } from "./sign-in/sign-in";
-import { initPasswordRecovery } from "./pass-recovery/pass-recovery";
-import { initLogout } from "./sign-out/sign-out";
-import { initProfileRouter } from "./profile/profile-sidebar";
-import { initSubscriptions } from "./profile/profile-subscriptions";
-import { initProfileUpdate } from "./profile/profile-overview";
-import { initPaymentUpdate } from "./profile/profile-payment";
-import { initPasswordUpdate } from "./profile/profile-password";
+import { initBurgerMenu } from "./pages/burger-menu/burger-menu";
+import { initAuthLink } from "./pages/home-page/auth-link";
+import { initSwiper } from "./pages/home-page/product-swiper";
+import { initSignUpForm } from "./auth/sign-up/rendering-form";
+import { initQuiz } from "./pages/quiz/quiz";
+import { initPersonalPack } from "./pages/personal-pack/personal-pack";
+import { initSignInForm } from "./auth/sign-in/sign-in";
+import { initPasswordRecovery } from "./auth/pass-recovery/pass-recovery";
+import { initLogout } from "./auth/sign-out/sign-out";
+import { initProfileRouter } from "./pages/profile/profile-sidebar";
+import { initSubscriptions } from "./pages/profile/profile-subscriptions";
+import { initProfileUpdate } from "./pages/profile/profile-overview";
+import { initPaymentUpdate } from "./pages/profile/profile-payment";
+import { initPasswordUpdate } from "./pages/profile/profile-password";
 
 document.addEventListener("DOMContentLoaded", async () => {
   initBurgerMenu();

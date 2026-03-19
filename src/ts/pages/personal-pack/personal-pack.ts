@@ -1,5 +1,5 @@
-import { getCollectionsData } from "../api/firestore-utils";
-import { getCategoryClass } from "../utils/category-utils";
+import { getCollectionsData } from "../../api/firestore-utils";
+import { getCategoryClass } from "../../utils/category-utils";
 
 type QuizData = {
   quizName: string;

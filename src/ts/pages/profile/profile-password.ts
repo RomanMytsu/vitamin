@@ -3,9 +3,9 @@ import {
   reauthenticateWithCredential,
   updatePassword,
 } from "firebase/auth";
-import { auth } from "../firebase/firebase";
-import { showToastError, showToastSuccess } from "../utils/toast/toast";
-import { changePasswordValidator } from "./../utils/validate-form/validate-field";
+import { auth } from "../../firebase/firebase";
+import { showToastError, showToastSuccess } from "../../utils/toast/toast";
+import { changePasswordValidator } from "../../utils/validate-form/validate-field";
 
 type PasswordFormData = {
   currentPassword: string;

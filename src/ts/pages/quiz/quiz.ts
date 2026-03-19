@@ -1,7 +1,7 @@
 import {
   initValidation,
   quizValidator,
-} from "../utils/validate-form/validate-field";
+} from "../../utils/validate-form/validate-field";
 
 type QuizStep = HTMLElement;
 

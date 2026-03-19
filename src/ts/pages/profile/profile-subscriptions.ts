@@ -1,6 +1,6 @@
 import { orderBy } from "firebase/firestore";
-import { getCollectionsData } from "../api/firestore-utils";
-import { getCategoryClass } from "../utils/category-utils";
+import { getCollectionsData } from "../../api/firestore-utils";
+import { getCategoryClass } from "../../utils/category-utils";
 
 type Subscription = {
   name: string;

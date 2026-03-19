@@ -1,5 +1,5 @@
 import { registration } from "./register";
-import { initValidation } from "../utils/validate-form/validate-field";
+import { initValidation } from "../../utils/validate-form/validate-field";
 
 type CustomerType = "regular" | "wholesale";
 

@@ -1,7 +1,7 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
-import { auth } from "../firebase/firebase";
-import { showToast } from "../utils/toast/toast";
+import { auth } from "../../firebase/firebase";
+import { showToast } from "../../utils/toast/toast";
 
 export function initSignInForm(): void {
   const form = document.querySelector<HTMLFormElement>("#sign-in-form");
@@ -30,17 +30,17 @@ export function initSignInForm(): void {
     inputs.forEach((input) => input.classList.remove("input-error"));
 
     try {
+      submitButton.disabled = true;
+
       await signInWithEmailAndPassword(
         auth,
         emailInput.value.trim(),
         passwordInput.value,
       );
 
-      showToast("Login successful!", 3000, "success");
+      showToast("Login successful!");
       window.location.href = "profile.html";
     } catch (error: unknown) {
-      console.error("Login error:", error);
-
       let message = "Login failed. Please check your credentials.";
 
       if (error instanceof FirebaseError) {
@@ -58,6 +58,8 @@ export function initSignInForm(): void {
       }
 
       showToast(message);
+
+      submitButton.disabled = false;
     }
   });
 }

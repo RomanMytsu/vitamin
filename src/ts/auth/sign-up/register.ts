@@ -1,8 +1,8 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
-import { auth, db } from "../firebase/firebase";
+import { auth, db } from "../../firebase/firebase";
 import { doc, setDoc } from "firebase/firestore";
-import { showToast } from "../utils/toast/toast";
+import { showToast } from "../../utils/toast/toast";
 
 type UserProfile = {
   firstName: string;

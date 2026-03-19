@@ -1,7 +1,7 @@
 import { sendPasswordResetEmail } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
-import { auth } from "../firebase/firebase";
-import { showToast } from "../utils/toast/toast";
+import { auth } from "../../firebase/firebase";
+import { showToast } from "../../utils/toast/toast";
 
 export function initPasswordRecovery(): void {
   const form = document.querySelector<HTMLFormElement>("#pass-recovery-form");
@@ -35,8 +35,6 @@ export function initPasswordRecovery(): void {
 
       form.reset();
     } catch (error: unknown) {
-      console.error("Password recovery error:", error);
-
       let message = "Failed to send recovery email.";
 
       if (error instanceof FirebaseError) {

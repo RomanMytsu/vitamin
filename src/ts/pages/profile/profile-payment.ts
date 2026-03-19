@@ -1,7 +1,7 @@
-import { updateDocument } from "../api/firestore-utils";
-import { auth } from "../firebase/firebase";
-import { paymentFormValidator } from "../utils/validate-form/validate-field";
-import { showToastError, showToastSuccess } from "../utils/toast/toast";
+import { updateDocument } from "../../api/firestore-utils";
+import { auth } from "../../firebase/firebase";
+import { paymentFormValidator } from "../../utils/validate-form/validate-field";
+import { showToastError, showToastSuccess } from "../../utils/toast/toast";
 
 type UserPayment = {
   cardNumber: string;
