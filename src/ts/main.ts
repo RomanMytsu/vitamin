@@ -12,6 +12,7 @@ import { initSubscriptions } from "./pages/profile/profile-subscriptions";
 import { initProfileUpdate } from "./pages/profile/profile-overview";
 import { initPaymentUpdate } from "./pages/profile/profile-payment";
 import { initPasswordUpdate } from "./pages/profile/profile-password";
+import { initCatalogSwiper } from "./pages/catalog/swiper";
 
 document.addEventListener("DOMContentLoaded", async () => {
   initBurgerMenu();
@@ -28,4 +29,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   initProfileUpdate();
   initPaymentUpdate();
   initPasswordUpdate();
+  initCatalogSwiper();
 });

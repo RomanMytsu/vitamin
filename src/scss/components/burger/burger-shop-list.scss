@@ -47,14 +47,15 @@
     padding: 40px 0;
   }
 
-  &__shop-link-red {
-    color: v.$red;
-  }
-
   &__shop-link {
     font-family: "Effra", sans-serif;
     font-weight: 500;
+    background-color: transparent;
+    border: none;
     color: v.$color-black;
+    &.red {
+      color: v.$red;
+    }
   }
 
   &__bottom {
