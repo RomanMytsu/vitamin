@@ -1,23 +1,14 @@
 import { initBurgerMenu } from "./pages/burger-menu/burger-menu";
 import { initAuthLink } from "./pages/home-page/auth-link";
 import { initSwiper } from "./pages/home-page/product-swiper";
-import { initSignUpForm } from "./auth/sign-up/rendering-form";
-import { initQuiz } from "./pages/quiz/quiz";
-import { initPersonalPack } from "./pages/personal-pack/personal-pack";
-import { initSignInForm } from "./auth/sign-in/sign-in";
-import { initPasswordRecovery } from "./auth/pass-recovery/pass-recovery";
-import { initLogout } from "./auth/sign-out/sign-out";
+import { initAuthStatus } from "./utils/auth-status";
 
 document.addEventListener("DOMContentLoaded", async () => {
   initBurgerMenu();
   initSwiper();
-  initSignUpForm();
-  initSignInForm();
   initAuthLink();
-  initLogout();
-  initPasswordRecovery();
-  initQuiz();
-  initPersonalPack();
+  initAuthStatus();
+
   const page = document.body.dataset.page;
 
   if (page === "profile") {
@@ -31,12 +22,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       await import("./pages/profile/profile-payment");
     const { initPasswordUpdate } =
       await import("./pages/profile/profile-password");
+    const { initLogout } = await import("./auth/sign-out/sign-out");
 
     initProfileRouter();
     initSubscriptions();
     initProfileUpdate();
     initPaymentUpdate();
     initPasswordUpdate();
+    initLogout();
   }
 
   if (page === "catalog") {
@@ -45,5 +38,35 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     initCatalogSwiper();
     initCatalog();
+  }
+
+  if (page === "quiz") {
+    const { initQuiz } = await import("./pages/quiz/quiz");
+
+    initQuiz();
+  }
+
+  if (page === "personal-pack") {
+    const { initPersonalPack } =
+      await import("./pages/personal-pack/personal-pack");
+
+    initPersonalPack();
+  }
+
+  if (page === "sign-up") {
+    const { initSignUpForm } = await import("./auth/sign-up/rendering-form");
+
+    initSignUpForm();
+  }
+  if (page === "sign-in") {
+    const { initSignInForm } = await import("./auth/sign-in/sign-in");
+
+    initSignInForm();
+  }
+  if (page === "pass-recovery") {
+    const { initPasswordRecovery } =
+      await import("./auth/pass-recovery/pass-recovery");
+
+    initPasswordRecovery();
   }
 });
