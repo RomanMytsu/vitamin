@@ -1,9 +1,16 @@
 <!doctype html>
 <html lang="en">
   @@include('html/components/head.html', { title: 'Shop' })
-  <body>
+  <body data-page="catalog">
     @@include('html/components/header.html')
-    <main>@@include('html/pages/catalog/catalog-hero.html')</main>
+    <main>
+      @@include('html/pages/catalog/catalog-hero.html')
+      @@include('html/pages/catalog/catalog-section.html')
+      @@include('html/pages/catalog/catalog-banner.html')
+      @@include('html/components/reviews.html', { "onlyTitle": false,
+      "sectionClass": "catalog-reviews", "topContent":
+      "catalog-reviews__top-content", "titleClass": "catalog-reviews__title"} )
+    </main>
     @@include('html/components/footer.html')
     @@include('html/components/burger/burger-menu.html')
     <script src="js/main.min.js"></script>

@@ -1,0 +1,25 @@
+@use "./utils/variables" as v;
+
+.catalog-reviews {
+  padding: 0 0 60px;
+  @media (min-width: v.$bp-laptop) {
+    padding: 0 0 100px;
+  }
+
+  &__top-content {
+    align-items: baseline;
+    @media (min-width: v.$bp-desktop) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+    text-align: left;
+    @media (min-width: v.$bp-desktop) {
+      font-size: 30px;
+      width: 400px;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -7,12 +7,6 @@ import { initPersonalPack } from "./pages/personal-pack/personal-pack";
 import { initSignInForm } from "./auth/sign-in/sign-in";
 import { initPasswordRecovery } from "./auth/pass-recovery/pass-recovery";
 import { initLogout } from "./auth/sign-out/sign-out";
-import { initProfileRouter } from "./pages/profile/profile-sidebar";
-import { initSubscriptions } from "./pages/profile/profile-subscriptions";
-import { initProfileUpdate } from "./pages/profile/profile-overview";
-import { initPaymentUpdate } from "./pages/profile/profile-payment";
-import { initPasswordUpdate } from "./pages/profile/profile-password";
-import { initCatalogSwiper } from "./pages/catalog/swiper";
 
 document.addEventListener("DOMContentLoaded", async () => {
   initBurgerMenu();
@@ -24,10 +18,32 @@ document.addEventListener("DOMContentLoaded", async () => {
   initPasswordRecovery();
   initQuiz();
   initPersonalPack();
-  initProfileRouter();
-  initSubscriptions();
-  initProfileUpdate();
-  initPaymentUpdate();
-  initPasswordUpdate();
-  initCatalogSwiper();
+  const page = document.body.dataset.page;
+
+  if (page === "profile") {
+    const { initProfileRouter } =
+      await import("./pages/profile/profile-sidebar");
+    const { initSubscriptions } =
+      await import("./pages/profile/profile-subscriptions");
+    const { initProfileUpdate } =
+      await import("./pages/profile/profile-overview");
+    const { initPaymentUpdate } =
+      await import("./pages/profile/profile-payment");
+    const { initPasswordUpdate } =
+      await import("./pages/profile/profile-password");
+
+    initProfileRouter();
+    initSubscriptions();
+    initProfileUpdate();
+    initPaymentUpdate();
+    initPasswordUpdate();
+  }
+
+  if (page === "catalog") {
+    const { initCatalogSwiper } = await import("./pages/catalog/swiper");
+    const { initCatalog } = await import("./pages/catalog/catalog");
+
+    initCatalogSwiper();
+    initCatalog();
+  }
 });
