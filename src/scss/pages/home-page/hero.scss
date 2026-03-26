@@ -1,7 +1,7 @@
 @use "./utils/variables" as v;
 
 .hero {
-  padding: 35px 0 15px;
+  padding: 111px 0 15px;
   @media (min-width: v.$bp-tablet) {
     padding: 60px 0 30px;
   }

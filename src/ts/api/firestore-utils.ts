@@ -17,15 +17,15 @@ import { db } from "../firebase/firebase";
 export async function getCollectionsData<T>(
   collectionName: string,
   ...constraints: QueryConstraint[]
-): Promise<T[]> {
+): Promise<(T & { id: string })[]> {
   const colRef = collection(db, collectionName);
   const q = query(colRef, ...constraints);
   const result = await getDocs(q);
-  const data: T[] = result.docs.map((doc) => {
-    const d = doc.data();
-    return { ...d } as T;
-  });
-  return data;
+
+  return result.docs.map((doc) => ({
+    id: doc.id,
+    ...(doc.data() as T),
+  }));
 }
 
 export async function getCatalogPage<T>({
@@ -59,7 +59,10 @@ export async function getCatalogPage<T>({
   const snapshot = await getDocs(q);
 
   return {
-    data: snapshot.docs.map((doc) => doc.data() as T),
+    data: snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...(doc.data() as T),
+    })),
     lastDoc: snapshot.docs[snapshot.docs.length - 1],
   };
 }

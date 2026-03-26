@@ -3,9 +3,9 @@
 .personal-pack-hero {
   position: relative;
   overflow-x: clip;
-  padding-top: 45px;
+  padding-top: 122px;
   @media (min-width: v.$bp-desktop) {
-    padding-top: 94px;
+    padding-top: 180px;
   }
 
   &__container {
@@ -84,7 +84,7 @@
   &__elipse1 {
     width: 163px;
     height: 73px;
-    top: -17px;
+    top: 60px;
     right: 46px;
     transform: rotateX(-180deg);
     &::before {
@@ -102,7 +102,7 @@
     @media (min-width: v.$bp-desktop) {
       width: 280px;
       height: 145px;
-      top: -48px;
+      top: 34px;
       right: 657px;
     }
   }
@@ -111,10 +111,10 @@
     width: 163px;
     height: 73px;
     right: -110px;
-    top: 119px;
+    top: 195px;
     @media (min-width: v.$bp-desktop) {
       right: -98px;
-      top: 174px;
+      top: 259px;
       width: 280px;
       height: 145px;
     }

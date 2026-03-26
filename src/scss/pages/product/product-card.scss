@@ -1,0 +1,347 @@
+@use "./utils/variables" as v;
+
+.product-card {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__img-wrapper {
+    width: 100%;
+    height: 386px;
+    padding: 70px 0 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__content {
+    padding: 0 20px;
+    margin-top: 43px;
+  }
+
+  &__link-back {
+    display: none;
+  }
+
+  &__category {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 13px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 16px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-family: "Effra", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 80px;
+    max-width: 335px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 32px;
+      max-width: 563px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      font-size: 40px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: #f2f2f2;
+      bottom: -40px;
+    }
+  }
+
+  &__cart-wrapper {
+    max-width: 335px;
+    margin-bottom: 113px;
+    @media (min-width: v.$bp-laptop) {
+      max-width: 563px;
+    }
+  }
+
+  &__product-option {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 21px;
+    margin-bottom: 40px;
+  }
+
+  &__inner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  &__product-quantity {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  &__product-descript {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  &__counter-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    button {
+      border-radius: 100%;
+      background: #f5f5f5;
+      border: none;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    span {
+      font-family: "Effra", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+
+  &__order-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 50px;
+    padding: 25px 20px;
+    border-radius: 16px;
+    border: 1px solid #e5e5e5;
+  }
+
+  &__autoship {
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
+    &-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &-text {
+      font-size: 14px;
+
+      &-desktop {
+        display: none;
+      }
+    }
+
+    &-select {
+      border-radius: 8px;
+      background: #f5f5f5;
+      border: none;
+      padding: 8px 12px;
+      appearance: none;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+        border: none;
+        box-shadow: none;
+      }
+    }
+
+    &-title {
+      font-size: 14px;
+    }
+
+    &-checkbox {
+      position: absolute;
+      opacity: 0;
+      width: 62px;
+      height: 36px;
+      right: 0px;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    &-custom-checkbox {
+      position: relative;
+      width: 62px;
+      height: 36px;
+      background: #ffffff;
+      border-radius: 30px;
+      border: 2px solid #dedede;
+      position: relative;
+      transition: background 0.3s ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        background: #dedede;
+        border-radius: 50%;
+        top: 3px;
+        left: 3px;
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  &__autoship-checkbox:checked + &__autoship-custom-checkbox {
+    border-color: #f68b5c;
+
+    &::before {
+      transform: translateX(24px);
+      background: #f68b5c;
+    }
+  }
+  .product-card__autoship:has(.product-card__autoship-checkbox:checked) {
+    opacity: 1;
+  }
+
+  &__order-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: #f2f2f2;
+      top: 80px;
+    }
+  }
+
+  &__price-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__price {
+    font-family: "Effra", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  &__ordered-btn {
+    font-family: "Effra", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: v.$color-white;
+    border-radius: 100px;
+    background: v.$main-orange;
+    border: 1px solid v.$main-orange;
+    padding: 18px 32px;
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 1.71;
+    max-width: 269px;
+    margin-bottom: 60px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 16px;
+      line-height: 1.75;
+      margin-bottom: 90px;
+    }
+
+    &-title {
+      font-family: "Effra", sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+
+      margin-bottom: 24px;
+      @media (min-width: v.$bp-laptop) {
+        font-size: 26px;
+      }
+    }
+
+    &-subtitle {
+      margin-bottom: 30px;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    &-item {
+      position: relative;
+      padding-left: 40px;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 10px;
+        left: -1px;
+        width: 20px;
+        height: 2px;
+        background: v.$main-orange;
+      }
+    }
+  }
+
+  &__info {
+    max-width: 269px;
+
+    &-title {
+      font-family: "Effra", sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      margin-bottom: 30px;
+      @media (min-width: v.$bp-laptop) {
+        font-size: 26px;
+        margin-bottom: 40px;
+      }
+    }
+
+    &-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 60px;
+    }
+
+    &-label {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.71;
+      @media (min-width: v.$bp-laptop) {
+        font-size: 16px;
+        line-height: 1.75;
+      }
+    }
+
+    &-text {
+      font-size: 14px;
+      line-height: 1.71;
+      @media (min-width: v.$bp-laptop) {
+        font-size: 16px;
+        line-height: 1.75;
+      }
+    }
+  }
+}

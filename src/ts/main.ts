@@ -40,6 +40,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     initCatalog();
   }
 
+  if (page === "product-card") {
+    const { initProduct } = await import("./pages/product-card/product-card");
+
+    initProduct();
+  }
+
   if (page === "quiz") {
     const { initQuiz } = await import("./pages/quiz/quiz");
 

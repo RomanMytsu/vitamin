@@ -5,11 +5,11 @@
     display: grid;
     grid-template-columns: 217px 1fr;
     gap: 40px;
-    padding: 50px 102px 100px;
+    padding: 130px 102px 100px;
   }
 
   @media (min-width: v.$bp-desktop) {
-    padding: 75px 204px 100px 202px;
+    padding: 162px 204px 100px 202px;
     gap: 138px;
   }
 
@@ -17,14 +17,14 @@
     display: none;
 
     &.subscriptions {
-      padding: 45px 0 56px;
+      padding: 120px 0 56px;
       @media (min-width: v.$bp-laptop-sm) {
         padding: 0;
       }
     }
 
     &.overview {
-      padding: 45px 0 56px;
+      padding: 120px 0 56px;
       @media (min-width: v.$bp-laptop-sm) {
         padding: 0;
       }
@@ -34,7 +34,7 @@
     }
 
     &.payment {
-      padding: 45px 0 64px;
+      padding: 120px 0 64px;
       @media (min-width: v.$bp-laptop-sm) {
         padding: 0;
       }
@@ -44,7 +44,7 @@
     }
 
     &.password {
-      padding: 45px 0 64px;
+      padding: 120px 0 64px;
       @media (min-width: v.$bp-laptop-sm) {
         padding: 0;
       }

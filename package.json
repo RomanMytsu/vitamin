@@ -9,6 +9,7 @@
   "homepage": "https://github.com/RomanMytsu/vitamin",
   "scripts": {
     "dev": "gulp",
+    "clean": "gulp clean",
     "svg": "gulp svgSprive",
     "deploy": "gh-pages -d docs"
   },

@@ -8,6 +8,7 @@ import { getCollectionsData, getCatalogPage } from "../../api/firestore-utils";
 import { getCategoryClass } from "../../utils/category-utils";
 
 type Product = {
+  id: string;
   name: string;
   category: string;
   img: string;
@@ -96,12 +97,12 @@ export async function initCatalog(): Promise<void> {
     }
 
     itemsContainer.innerHTML = products
-      .map(({ name, category, img, price, discount, sale }) => {
+      .map(({id, name, category, img, price, discount, sale }) => {
         const textClass = getCategoryClass(category, "text");
         const discountedPrice = discount ? price * (1 - discount / 100) : price;
 
         return ` <article class="catalog__product-card">
-          <a href="#">
+          <a href="product-cart.html?id=${id}">
             <div class="catalog__product-card-wrapper ${sale ? "sale" : ""}">
               ${
                 sale && discount

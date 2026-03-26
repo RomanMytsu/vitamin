@@ -5,7 +5,7 @@ import versionNumber from "gulp-version-number";
 export const html = () => {
   return app.gulp
     .src(app.path.src.html)
-    .pipe(fileInclude({ basepath: "src" }))
+    .pipe(fileInclude({ basepath: "src", prefix: "@@" }))
     .pipe(app.plugins.replace(/@img\//g, "img/"))
     .pipe(webpHtmlNosvg())
     .pipe(
@@ -19,7 +19,7 @@ export const html = () => {
         output: {
           file: "gulp/version.json",
         },
-      })
+      }),
     )
     .pipe(app.gulp.dest(app.path.build.html))
     .pipe(app.plugins.browsersync.stream());
