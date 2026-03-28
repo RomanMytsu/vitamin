@@ -45,6 +45,9 @@
     grid-template-columns: 1fr;
     gap: 15px;
     margin-bottom: 30px;
+    .card-product {
+      background: v.$color-white;
+    }
     @media (min-width: v.$bp-mobile-l) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -53,76 +56,10 @@
     }
     @media (min-width: v.$bp-laptop) {
       grid-template-columns: repeat(4, 1fr);
-      margin-bottom: 60px;
+      margin-bottom: 50px;
     }
     @media (min-width: v.$bp-desktop) {
       gap: 32px;
-    }
-  }
-
-  &__product-card {
-    border-radius: 16px;
-    background: v.$color-white;
-    padding: 30px 20px 20px;
-    max-width: 325px;
-    @media (min-width: v.$bp-laptop) {
-      padding: 40px 30px 30px;
-    }
-  }
-
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__link {
-    color: v.$color-black;
-  }
-
-  &__image {
-    width: 240px;
-    height: 222px;
-    @media (min-width: v.$bp-laptop) {
-      width: 265px;
-      height: 245px;
-    }
-  }
-
-  &__card-content {
-    margin-top: 30px;
-    @media (min-width: v.$bp-laptop) {
-      margin-top: 40px;
-    }
-  }
-
-  &__category {
-    font-weight: 600;
-    font-size: 12px;
-    margin-bottom: 10px;
-    @media (min-width: v.$bp-laptop) {
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-  }
-
-  &__content-name {
-    font-family: "Effra", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    margin-bottom: 34px;
-    @media (min-width: v.$bp-laptop) {
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-  }
-
-  &__price {
-    font-weight: 700;
-    font-size: 16px;
-    @media (min-width: v.$bp-laptop) {
-      font-weight: 600;
-      font-size: 20px;
     }
   }
 
@@ -142,7 +79,7 @@
       font-family: "Open Sans", sans-serif;
       font-size: 20px;
       line-height: 1.63;
-      padding: 20px 0 ;
+      padding: 20px 0;
       height: 65px;
     }
   }

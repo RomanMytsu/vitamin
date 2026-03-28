@@ -42,8 +42,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (page === "product-card") {
     const { initProduct } = await import("./pages/product-card/product-card");
+    const { initProductPromo } =
+      await import("./pages/product-card/product-card-promo");
 
     initProduct();
+    initProductPromo();
   }
 
   if (page === "quiz") {

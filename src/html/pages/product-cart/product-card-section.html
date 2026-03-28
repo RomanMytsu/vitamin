@@ -28,7 +28,13 @@
                   <use href="@img/sprite.svg#product-card--minus"></use>
                 </svg>
               </button>
-              <span class="product-card__count">1</span>
+              <input
+                type="number"
+                class="product-card__count"
+                value="1"
+                min="1"
+                step="1"
+              />
               <button class="product-card__plus-btn" type="button">
                 <svg width="24" height="24">
                   <use href="@img/sprite.svg#product-card--plus"></use>
@@ -138,7 +144,7 @@
           <p class="product-card__info-text">
             *These statements have not been evaluated by the Food and Drug
             Administration. This product is not intended to diagnose, treat,
-            cure, or prevent any disease. 
+            cure, or prevent any disease.
             <br />
             <br />
             Statements regarding dietary supplements have not been evaluated by

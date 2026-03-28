@@ -9,6 +9,8 @@
 @use "./components/header.scss";
 @use "./components/burger/burger-menu.scss";
 @use "./components/burger/burger-shop-list.scss";
+@use "./components/card-product.scss";
+
 @use "./pages/home-page/hero.scss";
 @use "./pages/home-page/healthy.scss";
 @use "./pages/home-page/tell-us.scss";
@@ -34,6 +36,7 @@
 @use "./pages/catalog/catalog-reviews.scss";
 
 @use "./pages/product/product-card.scss";
+@use "./pages/product/product-card-promo.scss";
 
 @use "./pages/quiz/quiz.scss";
 @use "./pages/quiz/quiz-header.scss";

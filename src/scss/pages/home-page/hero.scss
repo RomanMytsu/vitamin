@@ -9,7 +9,7 @@
     padding: 80px 0 40px;
   }
   @media (min-width: v.$bp-desktop) {
-    padding: 158px 0 0 0;
+    padding: 246px 0 0 0;
   }
 
   &__container {
@@ -103,6 +103,7 @@
     position: absolute;
     top: 62%;
     left: 85%;
+    z-index: 500;
     @media (min-width: v.$bp-mobile) {
       top: 64%;
       left: 83%;

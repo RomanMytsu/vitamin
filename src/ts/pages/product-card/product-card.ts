@@ -1,6 +1,7 @@
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 import { getCategoryClass } from "../../utils/category-utils";
+import { showToastError, showToastSuccess } from "../../utils/toast/toast";
 
 type Product = {
   id: string;
@@ -11,6 +12,39 @@ type Product = {
   discount?: number;
   sale?: boolean;
 };
+
+type CartItem = {
+  id: string;
+  name: string;
+  price: number;
+  img: string;
+  count: number;
+};
+
+const CART_KEY = "cart";
+
+function saveCart(cart: CartItem[]) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+function getCart(): CartItem[] {
+  const data = localStorage.getItem(CART_KEY);
+  return data ? JSON.parse(data) : [];
+}
+
+function addToCart(item: CartItem) {
+  const cart = getCart();
+
+  const existing = cart.find((i) => i.id === item.id);
+
+  if (existing) {
+    existing.count += item.count;
+  } else {
+    cart.push(item);
+  }
+
+  saveCart(cart);
+}
 
 export async function initProduct(): Promise<void> {
   if (!window.location.search.includes("id")) return;
@@ -27,6 +61,7 @@ export async function initProduct(): Promise<void> {
     const snap = await getDoc(ref);
 
     if (!snap.exists()) {
+      showToastError("Product not found");
       return;
     }
 
@@ -43,6 +78,19 @@ export async function initProduct(): Promise<void> {
     const salePrice = document.querySelector(".product-card__sale-price");
     const imgWrapper = document.querySelector(".product-card__img-wrapper");
 
+    const minusBtn = document.querySelector<HTMLButtonElement>(
+      ".product-card__minus-btn",
+    );
+    const plusBtn = document.querySelector<HTMLButtonElement>(
+      ".product-card__plus-btn",
+    );
+    const countEl = document.querySelector<HTMLInputElement>(
+      ".product-card__count",
+    );
+    const addToCartBtn = document.querySelector<HTMLButtonElement>(
+      ".product-card__ordered-btn",
+    );
+
     if (
       !img ||
       !title ||
@@ -50,9 +98,59 @@ export async function initProduct(): Promise<void> {
       !price ||
       !imgWrapper ||
       !oldPrice ||
-      !salePrice
-    )
+      !salePrice ||
+      !minusBtn ||
+      !plusBtn ||
+      !countEl ||
+      !addToCartBtn
+    ) {
+      showToastError("Elements not found");
       return;
+    }
+
+    const basePrice = product.discount
+      ? product.price * (1 - product.discount / 100)
+      : product.price;
+
+    let count = 1;
+
+    function updatePrice() {
+      countEl!.value = String(count);
+
+      const total = basePrice * count;
+      const formatted = `$${total.toFixed(2)}`;
+
+      if (product.sale && product.discount) {
+        salePrice!.textContent = formatted;
+      } else {
+        price!.textContent = formatted;
+      }
+    }
+
+    plusBtn.addEventListener("click", () => {
+      count += 1;
+      updatePrice();
+    });
+
+    minusBtn.addEventListener("click", () => {
+      if (count > 1) {
+        count -= 1;
+        updatePrice();
+      }
+    });
+
+    countEl.addEventListener("input", () => {
+      let value = Number(countEl.value);
+
+      if (!value || value < 1) {
+        value = 1;
+      }
+
+      value = Math.floor(value);
+
+      count = value;
+      updatePrice();
+    });
 
     const discountedPrice = product.discount
       ? product.price * (1 - product.discount / 100)
@@ -75,7 +173,25 @@ export async function initProduct(): Promise<void> {
     } else {
       price.textContent = `$${product.price.toFixed(2)}`;
     }
+
+    addToCartBtn.addEventListener("click", () => {
+      try {
+        const item: CartItem = {
+          id: product.id,
+          name: product.name,
+          price: basePrice,
+          img: product.img,
+          count: count,
+        };
+
+        addToCart(item);
+
+        showToastSuccess(`${product.name} added to cart`);
+      } catch (e) {
+        showToastError("Failed to add to cart");
+      }
+    });
   } catch (e) {
-    console.error("Ошибка загрузки товара:", e);
+    showToastError("Failed to load product");
   }
 }

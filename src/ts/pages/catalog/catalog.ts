@@ -5,17 +5,7 @@ import {
   type DocumentData,
 } from "firebase/firestore";
 import { getCollectionsData, getCatalogPage } from "../../api/firestore-utils";
-import { getCategoryClass } from "../../utils/category-utils";
-
-type Product = {
-  id: string;
-  name: string;
-  category: string;
-  img: string;
-  price: number;
-  discount?: number;
-  sale?: boolean;
-};
+import { createProductCard, type Product } from "../../components/product-card";
 
 export async function initCatalog(): Promise<void> {
   const catalog = document.querySelector(".catalog");
@@ -86,7 +76,6 @@ export async function initCatalog(): Promise<void> {
       console.error("Ошибка загрузки:", e);
     }
   }
-
   function render() {
     if (!itemsContainer) return;
 
@@ -97,39 +86,7 @@ export async function initCatalog(): Promise<void> {
     }
 
     itemsContainer.innerHTML = products
-      .map(({id, name, category, img, price, discount, sale }) => {
-        const textClass = getCategoryClass(category, "text");
-        const discountedPrice = discount ? price * (1 - discount / 100) : price;
-
-        return ` <article class="catalog__product-card">
-          <a href="product-cart.html?id=${id}">
-            <div class="catalog__product-card-wrapper ${sale ? "sale" : ""}">
-              ${
-                sale && discount
-                  ? `<span class="catalog__product-card-badge">-${discount}%</span>`
-                  : ""
-              }
-              <img class="catalog__product-card-img" src="${img}" alt="${name}" loading="lazy"/>
-              <div class="catalog__product-card-content">
-                <p class="catalog__product-card-category ${textClass}">${category}</p>
-                <h3 class="catalog__product-card-name">${name}</h3>
-                <div class="catalog__product-card-prices-wrapper">
-                  ${
-                    sale && discount
-                      ? `<span class="catalog__product-card-old-price">$${price.toFixed(
-                          2,
-                        )}</span>
-                         <span class="catalog__product-card-sale-price">$${discountedPrice.toFixed(
-                           2,
-                         )}</span>`
-                      : `<span class="catalog__product-card-price">$${price.toFixed(2)}</span>`
-                  }
-                </div>
-              </div>
-            </div>
-          </a>
-        </article>`;
-      })
+      .map((p) => createProductCard(p))
       .join("");
 
     if (loadMoreBtn) {
@@ -171,9 +128,7 @@ export async function initCatalog(): Promise<void> {
       lastDoc = newLastDoc ?? null;
 
       render();
-    } catch (e) {
-      console.error("Ошибка load more:", e);
-    }
+    } catch (e) {}
 
     isLoading = false;
   });

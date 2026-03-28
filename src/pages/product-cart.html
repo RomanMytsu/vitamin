@@ -3,7 +3,10 @@
   @@include('html/components/head.html', { title: 'Product' })
   <body data-page="product-card">
     @@include('html/components/header.html')
-    <main>@@include('html/pages/product-cart/product-cart-section.html')</main>
+    <main>
+      @@include('html/pages/product-cart/product-card-section.html')
+      @@include('html/pages/product-cart/product-card-promo.html')
+    </main>
     @@include('html/components/footer.html')
     @@include('html/components/burger/burger-menu.html')
     <script src="js/main.min.js"></script>

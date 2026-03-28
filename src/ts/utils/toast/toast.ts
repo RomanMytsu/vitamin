@@ -30,7 +30,7 @@ export function showToastSuccess(message: string) {
   Toastify({
     node: (() => {
       const toast = document.createElement("div");
-      toast.innerHTML = `${checkIcon}Changes successfully saved`;
+      toast.innerHTML = `${checkIcon}${message}`;
       return toast;
     })(),
     duration: 4000,

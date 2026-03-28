@@ -2,16 +2,15 @@
   <div class="reviews__container container">
     <div class="reviews__wrapper">
       <div class="reviews__top-content @@topContent">
-        @@if (typeof onlyTitle !== "undefined" && !onlyTitle) {
+        @@if (typeof onlyTitle === "undefined" || onlyTitle === false) {
         <svg width="50" height="57">
           <use href="@img/sprite.svg#reviews--logo-title"></use>
         </svg>
         }
-
         <h2 class="reviews__title @@titleClass">
           What healthy and happy customer says
         </h2>
-        @@if (typeof onlyTitle !== "undefined" && !onlyTitle) {
+        @@if (typeof onlyTitle === "undefined" || onlyTitle === false) {
         <p class="reviews__sub-title">
           We'll help you create a health plan with vitamins, supplements, and
           more that help you feel your best today and support you long-term.
