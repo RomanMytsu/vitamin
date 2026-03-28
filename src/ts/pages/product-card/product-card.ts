@@ -58,7 +58,7 @@ export async function initProduct(): Promise<void> {
 
   try {
     const ref = doc(db, "catalog", productId);
-    const snap = await getDoc(ref);
+    const snap = await getDoc(ref); 
 
     if (!snap.exists()) {
       showToastError("Product not found");
