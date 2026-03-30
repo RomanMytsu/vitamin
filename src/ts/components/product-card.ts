@@ -50,3 +50,88 @@ export function createProductCard(
     </article>
   `;
 }
+
+export function createBasketCard(
+  product: Product,
+  options?: ProductCardOptions,
+): string {
+  const { id, name, category, img, price, discount, sale } = product;
+  const bgClass = options?.useBgClass
+    ? getCategoryClass(category, "background")
+    : "";
+  const discountedPrice = discount ? price * (1 - discount / 100) : price;
+
+  return `
+   <article class="basket__card-product">
+    <div class="basket__wrapper-content">
+      <a href="product-cart.html?id=${id}">
+        <div class="basket__product-card-img-wrapper ${bgClass}">
+          <img class="basket__img" src="${img}" alt="${name}" loading="lazy" />
+        </div>
+      </a>
+      <div class="basket__content">
+        <div class="basket__content-top">
+          <div class="basket__content-title-wrapper">
+            <h3 class="basket__content-name">${name}</h3>
+            <button class="basket__content-delete-item" id="deleteItem">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+          <div class="basket__inner">
+            <div class="basket__counter-wrapper">
+              <button class="basket__minus-btn" type="button">
+                <svg width="16" height="16">
+                  <use href="img/sprite.svg#product-card--minus"></use>
+                </svg>
+              </button>
+              <input
+                type="number"
+                class="basket__count"
+                value="1"
+                min="1"
+                step="1"
+              />
+              <button class="basket__plus-btn" type="button">
+                <svg width="16" height="16">
+                  <use href="img/sprite.svg#product-card--plus"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="basket__prices-wrapper">
+              ${
+                sale && discount
+                  ? `<span class="basket__old-price"
+                >$${price.toFixed(2)}</span
+              >
+              <span class="basket__sale-price"
+                >$${discountedPrice.toFixed(2)}</span
+              >`
+                  : `<span class="basket__price">$${price.toFixed(2)}</span>`
+              }
+            </div>
+          </div>
+        </div>
+        <div class="basket__autoship-control">
+          <label class="basket__autoship-label">
+            <input type="checkbox" class="basket__autoship-checkbox" />
+            <span class="basket__autoship-custom-checkbox"></span>
+            <div class="basket__autoship-text">
+              <p class="basket__autoship-text-desktop">Autoship every</p>
+              <p class="basket__autoship-text-mob">Deliver every</p>
+              <div class="basket__autoship-select-wrapper">
+                <select class="basket__autoship-select">
+                  <option value="30">30</option>
+                  <option value="60">60</option>
+                  <option value="90">90</option>
+                </select>
+              </div>
+              <p class="basket__autoship-days">days</p>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </article>
+  `;
+}

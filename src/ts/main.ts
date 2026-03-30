@@ -1,3 +1,4 @@
+import { initBasket } from "./pages/basket/basket";
 import { initBurgerMenu } from "./pages/burger-menu/burger-menu";
 import { initAuthLink } from "./pages/home-page/auth-link";
 import { initSwiper } from "./pages/home-page/product-swiper";
@@ -8,6 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   initSwiper();
   initAuthLink();
   initAuthStatus();
+  initBasket();
 
   const page = document.body.dataset.page;
 

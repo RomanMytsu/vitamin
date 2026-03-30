@@ -75,6 +75,12 @@
     display: flex;
   }
 
+  &__item-link-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
   &__item:nth-child(1),
   &__item:nth-child(3) {
     display: none;

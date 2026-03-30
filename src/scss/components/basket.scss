@@ -1,0 +1,425 @@
+@use "./utils/variables" as v;
+
+.basket {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: none;
+  opacity: 0;
+  z-index: 999;
+  transition: opacity 0.4s ease;
+
+  &.active {
+    opacity: 1;
+  }
+  &.visible {
+    display: flex;
+  }
+
+  &.active &__wrapper {
+    transform: translateX(0);
+  }
+
+  &__wrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 500px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    z-index: 999;
+    transition: transform 0.4s ease;
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 27px 24px 20px;
+    @media (min-width: v.$bp-desktop) {
+      padding: 38px 38px 42px 30px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.07);
+    }
+  }
+
+  &__title {
+    font-family: "Effra", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 26px;
+    }
+  }
+
+  &__close-btn {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: none;
+    background: none;
+    padding: 0;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 21px;
+      height: 2px;
+      background: #000;
+
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+
+    span:first-child {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    span:last-child {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &__content-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex: 1;
+    overflow-y: auto;
+    padding: 1px 20px 0 0;
+    @media (min-width: v.$bp-laptop-sm) {
+      gap: 0;
+      padding: 0;
+    }
+  }
+
+  &__card-product {
+    @media (min-width: v.$bp-laptop-sm) {
+      padding: 30px;
+    }
+  }
+
+  &__wrapper-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__product-card-img-wrapper {
+    width: 100px;
+    height: 204px;
+    padding: 56px 0 54px;
+    @media (min-width: v.$bp-laptop-sm) {
+      width: 120px;
+      height: 174px;
+      padding: 31px 0;
+    }
+  }
+
+  &__content {
+    width: 290px;
+
+    &-top {
+      padding-bottom: 15px;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    &-title-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    &-name {
+      font-family: "Effra", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      @media (min-width: v.$bp-laptop) {
+        font-size: 20px;
+      }
+    }
+
+    &-delete-item {
+      position: relative;
+      width: 14px;
+      height: 14px;
+      background: transparent;
+      border: none;
+      @media (min-width: v.$bp-desktop) {
+        margin-right: 10px;
+      }
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 18px;
+        height: 2px;
+        background: #c7c7c7;
+      }
+
+      span:first-child {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      span:last-child {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__counter-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    button {
+      border-radius: 100%;
+      background: #f5f5f5;
+      border: none;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    input {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      text-align: center;
+      border: none;
+      width: 30px;
+      display: flex;
+      align-items: center;
+      @media (min-width: v.$bp-desktop) {
+        width: 33px;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__price-wrapper {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: v.$bp-laptop) {
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 16px;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 18px;
+    }
+  }
+
+  &__old-price {
+    font-weight: 600;
+    font-size: 10px;
+    text-decoration: line-through;
+    text-align: right;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 12px;
+    }
+  }
+
+  &__sale-price {
+    font-weight: 600;
+    font-size: 16px;
+    color: v.$red;
+    @media (min-width: v.$bp-laptop) {
+      font-size: 18px;
+    }
+  }
+
+  &__autoship {
+    &-control {
+      position: relative;
+      padding-top: 15px;
+    }
+
+    &-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      @media (min-width: v.$bp-desktop) {
+        flex-direction: row;
+        gap: 10px;
+      }
+    }
+
+    &-checkbox {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      opacity: 0;
+
+      &:checked + .basket__autoship-custom-checkbox {
+        background-color: v.$main-orange;
+        border-color: v.$main-orange;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 4px;
+          top: 0px;
+          width: 6px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &-custom-checkbox {
+      width: 16px;
+      height: 16px;
+      border: 1px solid #c7c7c7;
+      border-radius: 4px;
+      margin-right: 10px;
+      position: relative;
+      flex-shrink: 0;
+      transition: all 0.4s ease;
+      background-color: v.$color-white;
+      @media (min-width: v.$bp-desktop) {
+        margin-right: 0;
+      }
+    }
+
+    &-text {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.5);
+      @media (min-width: v.$bp-desktop) {
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      &-desktop {
+        display: none;
+        @media (min-width: v.$bp-laptop) {
+          display: inline;
+        }
+      }
+
+      &-mob {
+        @media (min-width: v.$bp-desktop) {
+          display: none;
+        }
+      }
+    }
+
+    &-select-wrapper {
+      position: relative;
+      margin: 0 9px;
+      @media (min-width: v.$bp-desktop) {
+        margin: 0;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 12px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 8px;
+          height: 8px;
+          border-right: 1.5px solid black;
+          border-bottom: 1.5px solid black;
+          transform: translateY(-80%) rotate(45deg);
+          pointer-events: none;
+          z-index: 1;
+        }
+      }
+
+      select {
+        padding: 6px 12px 7px;
+        border-color: transparent;
+        border-radius: 4px;
+        background: #f5f5f5;
+        font-weight: 600;
+        font-size: 12px;
+        color: v.$color-black;
+        appearance: none;
+        -webkit-appearance: none;
+
+        @media (min-width: v.$bp-desktop) {
+          padding: 6px 32px 7px 14px;
+        }
+        &:focus {
+          outline: none;
+          border: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    padding: 17px 20px 16px;
+    @media (min-width: v.$bp-desktop) {
+      padding: 30px;
+    }
+
+    &-check-out-btn {
+      border-radius: 100px;
+      background: v.$main-orange;
+      border: 1px solid v.$main-orange;
+      padding: 18px 0;
+      font-family: "Effra", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      text-align: center;
+      width: 100%;
+      max-width: 440px;
+      color: v.$color-white;
+      span {
+        margin: 0 9px;
+        @media (min-width: v.$bp-desktop) {
+          margin: 0 12px;
+        }
+      }
+      @media (min-width: v.$bp-desktop) {
+        padding: 20px 0;
+        font-size: 20px;
+      }
+    }
+  }
+}

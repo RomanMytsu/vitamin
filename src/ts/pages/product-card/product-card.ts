@@ -19,15 +19,16 @@ type CartItem = {
   price: number;
   img: string;
   count: number;
+  category: string;
 };
 
 const CART_KEY = "cart";
 
-function saveCart(cart: CartItem[]) {
+export function saveCart(cart: CartItem[]) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
-function getCart(): CartItem[] {
+export function getCart(): CartItem[] {
   const data = localStorage.getItem(CART_KEY);
   return data ? JSON.parse(data) : [];
 }
@@ -58,7 +59,7 @@ export async function initProduct(): Promise<void> {
 
   try {
     const ref = doc(db, "catalog", productId);
-    const snap = await getDoc(ref); 
+    const snap = await getDoc(ref);
 
     if (!snap.exists()) {
       showToastError("Product not found");
@@ -182,6 +183,7 @@ export async function initProduct(): Promise<void> {
           price: basePrice,
           img: product.img,
           count: count,
+          category: product.category,
         };
 
         addToCart(item);
