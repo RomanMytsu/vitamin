@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="img/logo.svg?v=2" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.min.css?_v=20260328222156" />
+  <link rel="stylesheet" href="css/style.min.css?_v=20260331000303" />
   <title>Profile</title>
 </head>
 
@@ -31,11 +31,15 @@
           </a>
         </li>
         <li class="header__item">
-          <a href="cart.html" class="header__item-link">
+          <button
+            href="basket.html"
+            class="header__item-link-btn"
+            id="basketBtn"
+          >
             <svg width="32" height="32">
               <use href="img/sprite.svg#header--cart"></use>
             </svg>
-          </a>
+          </button>
         </li>
         <li class="header__item">
           <a href="quiz.html" class="header__item-quiz-link"> Take the quiz </a>
@@ -533,6 +537,24 @@
   </div>
 </div>
 
-    <script src="js/main.min.js?_v=20260328222156" defer></script>
+    <div class="basket">
+  <div class="basket__wrapper">
+    <div class="basket__header">
+      <p class="basket__title">Cart</p>
+      <button class="basket__close-btn" id="basketCloseBtn">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="basket__content-items"></div>
+    <div class="basket__footer">
+      <button class="basket__footer-check-out-btn" type="button">
+        Check Out
+      </button>
+    </div>
+  </div>
+</div>
+
+    <script src="js/main.min.js?_v=20260331000303" defer></script>
   </body>
 </html>
