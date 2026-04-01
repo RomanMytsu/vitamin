@@ -19,6 +19,7 @@
 @use "./components/reviews.scss";
 @use "./pages/home-page/get-ready.scss";
 @use "./components/footer.scss";
+@use "./components/form.scss";
 
 @use "./pages/sign-up/sign-up.scss";
 @use "./pages/sign-in/sign-in.scss";
@@ -38,6 +39,8 @@
 
 @use "./pages/product/product-card.scss";
 @use "./pages/product/product-card-promo.scss";
+
+@use "./pages/checkout/checkout.scss";
 
 @use "./pages/quiz/quiz.scss";
 @use "./pages/quiz/quiz-header.scss";

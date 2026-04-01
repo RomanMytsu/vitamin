@@ -8,6 +8,7 @@ export type Product = {
   price: number;
   discount?: number;
   sale?: boolean;
+  quantity?: number;
 };
 
 export type ProductCardOptions = {
@@ -133,5 +134,52 @@ export function createBasketCard(
       </div>
     </div>
   </article>
+  `;
+}
+
+export function createCheckoutCard(
+  product: Product,
+  options?: ProductCardOptions,
+): string {
+  const { id, name, category, img, price, discount, sale, quantity } = product;
+  const bgClass = options?.useBgClass
+    ? getCategoryClass(category, "background")
+    : "";
+  const discountedPrice = discount ? price * (1 - discount / 100) : price;
+
+  return `
+   <article class="checkout__card-product">
+              <div class="checkout__wrapper-content">
+                <a href="product-cart.html?id=${id}">
+                  <div class="checkout__product-card-img-wrapper ${bgClass}">
+                    <img
+                      class="checkout__img"
+                      src="${img}"
+                      alt="${name}"
+                      loading="lazy"
+                    />
+                  </div>
+                </a>
+                <div class="checkout__content">
+                  <p class="checkout__content-name">
+                    ${quantity}<span>x</span>${name}
+                  </p>
+                  <div class="checkout__prices-wrapper">
+                    ${
+                      sale && discount
+                        ? `<span class="checkout__old-price"
+                      >$${price.toFixed(2)}</span
+                    >
+                    <span class="checkout__sale-price"
+                      >$${discountedPrice.toFixed(2)}</span
+                    >`
+                        : `<span class="checkout__price"
+                      >$${price.toFixed(2)}</span
+                    >`
+                    }
+                  </div>
+                </div>
+              </div>
+            </article>
   `;
 }

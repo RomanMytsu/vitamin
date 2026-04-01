@@ -85,3 +85,7 @@ export const cardCvcRules = [
     errorMessage: "CVC must be 3 digits",
   },
 ];
+
+export const phoneRules = [
+  { rule: Rules.Required, errorMessage: "Phone number is required" },
+];

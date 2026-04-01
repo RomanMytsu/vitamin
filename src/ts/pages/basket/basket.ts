@@ -48,7 +48,9 @@ export function initBasket(): void {
     let total = 0;
 
     cart.forEach((item) => {
-      total += item.price * item.count;
+      total +=
+        (item.discount ? item.price * (1 - item.discount / 100) : item.price) *
+        item.count;
 
       const product: Product = {
         id: item.id,
@@ -56,7 +58,10 @@ export function initBasket(): void {
         img: item.img,
         price: item.price,
         category: item.category,
+        ...(item.discount !== undefined && { discount: item.discount }),
+        ...(item.sale !== undefined && { sale: item.sale }),
       };
+      console.log(cart);
 
       const cardHtml = createBasketCard(product, { useBgClass: true });
 
@@ -79,7 +84,13 @@ export function initBasket(): void {
         countInput.value = item.count.toString();
 
         const updateTotal = () => {
-          const totalSum = cart.reduce((sum, i) => sum + i.price * i.count, 0);
+          const totalSum = cart.reduce(
+            (sum, i) =>
+              sum +
+              (i.discount ? i.price * (1 - i.discount / 100) : i.price) *
+                i.count,
+            0,
+          );
           checkOutBtnEl.innerHTML = `Check Out <span>•</span> $${totalSum.toFixed(2)}`;
           saveCart(cart);
         };
@@ -122,6 +133,14 @@ export function initBasket(): void {
     checkOutBtnEl.textContent = `Check Out • $${total.toFixed(2)}`;
     scrollBasketContentToBottom();
   }
+
+  checkOutBtn.addEventListener("click", () => {
+    const cart = getCart();
+
+    if (!cart.length) return;
+
+    window.location.href = "checkout.html";
+  });
 
   function openBasket() {
     renderCart();

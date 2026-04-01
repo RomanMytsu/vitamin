@@ -1,0 +1,83 @@
+<section class="checkout">
+  <div class="checkout__container container">
+    <div class="checkout__wrapper">
+      <div class="checkout__header">
+        <a href="index.html">
+          <svg width="34" height="40">
+            <use href="@img/sprite.svg#logo"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="checkout__main">
+        <div class="checkout__form-wrapper">
+          <h3 class="checkout__form-title">Delivery Information</h3>
+          @@include('html/components/form.html', { name: 'Place order',
+          'biling': true, idBtn:'orderBtn', idForm: 'checkoutForm' })
+        </div>
+        <div class="checkout__order-wrapper">
+          <label class="checkout__order-mob-header" for="order-toggle">
+            <div class="checkout__order-mob-summary">
+              <svg width="32" height="32">
+                <use href="@img/sprite.svg#header--cart"></use>
+              </svg>
+              <span>Today's total</span>
+              <svg class="checkout__svg" width="15" height="9">
+                <use href="@img/sprite.svg#checkout--arrow"></use>
+              </svg>
+            </div>
+            <span class="checkout__order-total"></span>
+          </label>
+          <div class="checkout__order-content">
+            <div class="checkout__items-wrapper">
+              <div class="checkout__order-items"></div>
+              <div class="checkout__order-pricing-wrapper">
+                <div class="checkout__order-pricing">
+                  <p>Subtotal:</p>
+                  <span class="checkout__order-price"></span>
+                </div>
+                <div class="checkout__order-pricing discount">
+                  <p>Discount</p>
+                  <span class="checkout__order-discount"></span>
+                </div>
+                <div class="checkout__order-pricing">
+                  <p>Shipping:</p>
+                  <span class="checkout__order-shipping"></span>
+                </div>
+                <div class="checkout__order-pricing total">
+                  <p>Today’s Total:</p>
+                  <span class="checkout__order-total"></span>
+                </div>
+              </div>
+              <button
+                class="checkout__order-btn"
+                type="submit"
+                id="orderBtn"
+                form="checkoutForm"
+              >
+                Place order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="checkout__footer">
+        <ul class="checkout__footer-list">
+          <li class="checkout__footer-item">
+            <a href="text-template.html">Return Policy</a>
+          </li>
+          <li class="checkout__footer-item">
+            <a href="text-template.html">Privacy Policy</a>
+          </li>
+          <li class="checkout__footer-item">
+            <a href="text-template.html">Terms & Conditions</a>
+          </li>
+        </ul>
+        <img
+          src="@img/checkout/checkout-img.webp"
+          alt="checkout photo"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>

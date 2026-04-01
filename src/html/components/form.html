@@ -1,0 +1,92 @@
+<form class="form" id="@@idForm">
+  <div class="form__form-wrapper">
+    <div class="form__field">
+      <label for="first-name">First Name</label>
+      <input type="text" id="first-name" name="firstName" />
+    </div>
+    <div class="form__field">
+      <label for="last-name">Last Name</label>
+      <input type="text" id="last-name" name="lastName" />
+    </div>
+    <div class="form__field">
+      <label for="address1">Address Line 1</label>
+      <input type="text" id="address1" name="address1" />
+    </div>
+    <div class="form__field">
+      <label for="address2">Address Line 2</label>
+      <input type="text" id="address2" name="address2" />
+    </div>
+    <div class="form__field">
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" />
+    </div>
+    <div class="form__field-wrapper">
+      <div class="form__field">
+        <label for="state">State / Province</label>
+        <div class="form__custom-select-wrapper">
+          <select
+            class="form__custom-select"
+            type="select"
+            id="state"
+            name="state"
+          >
+            <option value="NY">NY</option>
+            <option value="CA">CA</option>
+            <option value="TX">TX</option>
+          </select>
+        </div>
+      </div>
+      <div class="form__field">
+        <label for="zip">ZIP / Postal Code</label>
+        <input type="text" id="zip" name="zip" />
+      </div>
+    </div>
+    <div class="form__field">
+      <label for="city">Email</label>
+      <input type="email" id="email" name="email" />
+    </div>
+    <div class="form__field">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" />
+      <span class="form__error" id="phone-error"></span>
+    </div>
+  </div>
+  @@if(biling) {
+  <div class="checkout__fields-wrapper">
+    <h3 class="checkout__form-title biling">Biling</h3>
+    <div class="checkout__fields">
+      <div class="checkout__field">
+        <label for="payment-card">Card Number</label>
+        <input
+          id="payment-card"
+          maxlength="19"
+          type="text"
+          placeholder="XXXX XXXX XXXX XXXX"
+          name="payment-card"
+        />
+      </div>
+      <div class="checkout__field-wrapper">
+        <div class="checkout__field small">
+          <label for="payment-expiration">Expiration</label>
+          <input
+            id="payment-expiration"
+            type="text"
+            placeholder="MM/YY"
+            name="payment-expiration"
+          />
+        </div>
+        <div class="checkout__field small">
+          <label for="payment-cvc">CVC</label>
+          <input
+            id="payment-cvc"
+            type="password"
+            placeholder="CVC"
+            name="payment-cvc"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+  <button type="submit" class="form__btn" id="@@idBtn" disabled>@@name</button>
+</form>

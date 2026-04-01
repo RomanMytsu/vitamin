@@ -80,4 +80,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     initPasswordRecovery();
   }
+
+  if (page === "checkout") {
+    const { initCheckout } = await import("./pages/checkout/checkout");
+
+    initCheckout();
+  }
 });

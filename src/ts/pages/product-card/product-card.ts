@@ -2,16 +2,17 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 import { getCategoryClass } from "../../utils/category-utils";
 import { showToastError, showToastSuccess } from "../../utils/toast/toast";
+import type { Product } from "../../components/product-card";
 
-type Product = {
-  id: string;
-  name: string;
-  category: string;
-  img: string;
-  price: number;
-  discount?: number;
-  sale?: boolean;
-};
+// type Product = {
+//   id: string;
+//   name: string;
+//   category: string;
+//   img: string;
+//   price: number;
+//   discount?: number;
+//   sale?: boolean;
+// };
 
 type CartItem = {
   id: string;
@@ -20,6 +21,8 @@ type CartItem = {
   img: string;
   count: number;
   category: string;
+  discount?: number;
+  sale?: boolean;
 };
 
 const CART_KEY = "cart";
@@ -180,10 +183,12 @@ export async function initProduct(): Promise<void> {
         const item: CartItem = {
           id: product.id,
           name: product.name,
-          price: basePrice,
+          price: product.price,
           img: product.img,
           count: count,
           category: product.category,
+          ...(product.discount !== undefined && { discount: product.discount }),
+          ...(product.sale !== undefined && { sale: product.sale }),
         };
 
         addToCart(item);

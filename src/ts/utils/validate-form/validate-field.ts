@@ -77,3 +77,23 @@ export function changePasswordValidator(): JustValidate | null {
 
   return passworValidator;
 }
+
+export function initCheckoutValidator(): JustValidate | null {
+  const profileForm = document.querySelector<HTMLFormElement>("#checkoutForm");
+  if (!profileForm) return null;
+
+  const profileValidator = new JustValidate(profileForm);
+
+  profileValidator.addField("#first-name", nameRules);
+  profileValidator.addField("#last-name", nameRules);
+  profileValidator.addField("#address1", addressRules);
+  profileValidator.addField("#address2", addressRules);
+  profileValidator.addField("#city", cityRules);
+  profileValidator.addField("#zip", zipRules);
+  profileValidator.addField("#email", emailRules);
+  profileValidator.addField("#payment-card", cardNumberRules);
+  profileValidator.addField("#payment-expiration", cardExpirationRules);
+  profileValidator.addField("#payment-cvc", cardCvcRules);
+
+  return profileValidator;
+}

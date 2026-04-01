@@ -1,4 +1,5 @@
 import {
+  addDoc,
   collection,
   doc,
   getDocs,
@@ -10,7 +11,9 @@ import {
   startAfter,
   updateDoc,
   where,
+  type DocumentData,
   type UpdateData,
+  type WithFieldValue,
 } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 
@@ -75,4 +78,15 @@ export async function updateDocument<T extends Record<string, unknown>>(
   const docRef = doc(db, collectionName, docId);
 
   await updateDoc(docRef, data);
+}
+
+export async function createDocument<T extends DocumentData>(
+  collectionName: string,
+  data: WithFieldValue<T>,
+): Promise<string> {
+  const colRef = collection(db, collectionName);
+
+  const docRef = await addDoc(colRef, data);
+
+  return docRef.id;
 }
