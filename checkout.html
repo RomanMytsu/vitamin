@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg?v=2" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.min.css?_v=20260401222728" />
+  <title>Checkout</title>
+</head>
+
+  <body data-page="checkout">
+    <section class="checkout">
+  <div class="checkout__container container">
+    <div class="checkout__wrapper">
+      <div class="checkout__header">
+        <a href="index.html">
+          <svg width="34" height="40">
+            <use href="img/sprite.svg#logo"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="checkout__main">
+        <div class="checkout__form-wrapper">
+          <h3 class="checkout__form-title">Delivery Information</h3>
+          <form class="form" id="checkoutForm">
+  <div class="form__form-wrapper">
+    <div class="form__field">
+      <label for="first-name">First Name</label>
+      <input type="text" id="first-name" name="firstName" />
+    </div>
+    <div class="form__field">
+      <label for="last-name">Last Name</label>
+      <input type="text" id="last-name" name="lastName" />
+    </div>
+    <div class="form__field">
+      <label for="address1">Address Line 1</label>
+      <input type="text" id="address1" name="address1" />
+    </div>
+    <div class="form__field">
+      <label for="address2">Address Line 2</label>
+      <input type="text" id="address2" name="address2" />
+    </div>
+    <div class="form__field">
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" />
+    </div>
+    <div class="form__field-wrapper">
+      <div class="form__field">
+        <label for="state">State / Province</label>
+        <div class="form__custom-select-wrapper">
+          <select
+            class="form__custom-select"
+            type="select"
+            id="state"
+            name="state"
+          >
+            <option value="NY">NY</option>
+            <option value="CA">CA</option>
+            <option value="TX">TX</option>
+          </select>
+        </div>
+      </div>
+      <div class="form__field">
+        <label for="zip">ZIP / Postal Code</label>
+        <input type="text" id="zip" name="zip" />
+      </div>
+    </div>
+    <div class="form__field">
+      <label for="city">Email</label>
+      <input type="email" id="email" name="email" />
+    </div>
+    <div class="form__field">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" />
+      <span class="form__error" id="phone-error"></span>
+    </div>
+  </div>
+  
+  <div class="checkout__fields-wrapper">
+    <h3 class="checkout__form-title biling">Biling</h3>
+    <div class="checkout__fields">
+      <div class="checkout__field">
+        <label for="payment-card">Card Number</label>
+        <input
+          id="payment-card"
+          maxlength="19"
+          type="text"
+          placeholder="XXXX XXXX XXXX XXXX"
+          name="payment-card"
+        />
+      </div>
+      <div class="checkout__field-wrapper">
+        <div class="checkout__field small">
+          <label for="payment-expiration">Expiration</label>
+          <input
+            id="payment-expiration"
+            type="text"
+            placeholder="MM/YY"
+            name="payment-expiration"
+          />
+        </div>
+        <div class="checkout__field small">
+          <label for="payment-cvc">CVC</label>
+          <input
+            id="payment-cvc"
+            type="password"
+            placeholder="CVC"
+            name="payment-cvc"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <button type="submit" class="form__btn" id="orderBtn" disabled>Place order</button>
+</form>
+
+        </div>
+        <div class="checkout__order-wrapper">
+          <label class="checkout__order-mob-header" for="order-toggle">
+            <div class="checkout__order-mob-summary">
+              <svg width="32" height="32">
+                <use href="img/sprite.svg#header--cart"></use>
+              </svg>
+              <span>Today's total</span>
+              <svg class="checkout__svg" width="15" height="9">
+                <use href="img/sprite.svg#checkout--arrow"></use>
+              </svg>
+            </div>
+            <span class="checkout__order-total"></span>
+          </label>
+          <div class="checkout__order-content">
+            <div class="checkout__items-wrapper">
+              <div class="checkout__order-items"></div>
+              <div class="checkout__order-pricing-wrapper">
+                <div class="checkout__order-pricing">
+                  <p>Subtotal:</p>
+                  <span class="checkout__order-price"></span>
+                </div>
+                <div class="checkout__order-pricing discount">
+                  <p>Discount</p>
+                  <span class="checkout__order-discount"></span>
+                </div>
+                <div class="checkout__order-pricing">
+                  <p>Shipping:</p>
+                  <span class="checkout__order-shipping"></span>
+                </div>
+                <div class="checkout__order-pricing total">
+                  <p>Today’s Total:</p>
+                  <span class="checkout__order-total"></span>
+                </div>
+              </div>
+              <button
+                class="checkout__order-btn"
+                type="submit"
+                id="orderBtn"
+                form="checkoutForm"
+              >
+                Place order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="checkout__footer">
+        <ul class="checkout__footer-list">
+          <li class="checkout__footer-item">
+            <a href="text-template.html">Return Policy</a>
+          </li>
+          <li class="checkout__footer-item">
+            <a href="text-template.html">Privacy Policy</a>
+          </li>
+          <li class="checkout__footer-item">
+            <a href="text-template.html">Terms & Conditions</a>
+          </li>
+        </ul>
+        <img
+          src="img/checkout/checkout-img.webp"
+          alt="checkout photo"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+    <script src="js/main.min.js?_v=20260401222728" defer></script>
+  </body>
+</html>

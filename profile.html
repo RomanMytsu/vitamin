@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="img/logo.svg?v=2" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.min.css?_v=20260331000303" />
+  <link rel="stylesheet" href="css/style.min.css?_v=20260401222728" />
   <title>Profile</title>
 </head>
 
@@ -103,68 +103,63 @@
     <h2 class="profile__page-title overview">Account Overview</h2>
     <p class="profile-overview__text">Regular customer</p>
   </div>
-  <form class="profile-overview__form" id="form-overview">
-    <div class="profile-overview__form-wrapper">
-      <div class="profile-overview__field">
-        <label for="first-name">First Name</label>
-        <input type="text" id="first-name" name="firstName" />
-      </div>
-      <div class="profile-overview__field">
-        <label for="last-name">Last Name</label>
-        <input type="text" id="last-name" name="lastName" />
-      </div>
-      <div class="profile-overview__field">
-        <label for="address1">Address Line 1</label>
-        <input type="text" id="address1" name="address1" />
-      </div>
-      <div class="profile-overview__field">
-        <label for="address2">Address Line 2</label>
-        <input type="text" id="address2" name="address2" />
-      </div>
-      <div class="profile-overview__field">
-        <label for="city">City</label>
-        <input type="text" id="city" name="city" />
-      </div>
-      <div class="profile-overview__field-wrapper">
-        <div class="profile-overview__field">
-          <label for="state">State / Province</label>
-          <div class="profile-overview__custom-select-wrapper">
-            <select
-              class="profile-overview__custom-select"
-              type="select"
-              id="state"
-              name="state"
-            >
-              <option value="NY">NY</option>
-              <option value="CA">CA</option>
-              <option value="TX">TX</option>
-            </select>
-          </div>
-        </div>
-        <div class="profile-overview__field">
-          <label for="zip">ZIP / Postal Code</label>
-          <input type="text" id="zip" name="zip" />
+  <form class="form" id="form-overview">
+  <div class="form__form-wrapper">
+    <div class="form__field">
+      <label for="first-name">First Name</label>
+      <input type="text" id="first-name" name="firstName" />
+    </div>
+    <div class="form__field">
+      <label for="last-name">Last Name</label>
+      <input type="text" id="last-name" name="lastName" />
+    </div>
+    <div class="form__field">
+      <label for="address1">Address Line 1</label>
+      <input type="text" id="address1" name="address1" />
+    </div>
+    <div class="form__field">
+      <label for="address2">Address Line 2</label>
+      <input type="text" id="address2" name="address2" />
+    </div>
+    <div class="form__field">
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" />
+    </div>
+    <div class="form__field-wrapper">
+      <div class="form__field">
+        <label for="state">State / Province</label>
+        <div class="form__custom-select-wrapper">
+          <select
+            class="form__custom-select"
+            type="select"
+            id="state"
+            name="state"
+          >
+            <option value="NY">NY</option>
+            <option value="CA">CA</option>
+            <option value="TX">TX</option>
+          </select>
         </div>
       </div>
-      <div class="profile-overview__field">
-        <label for="city">Email</label>
-        <input type="email" id="email" name="email" />
-      </div>
-      <div class="profile-overview__field">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" />
-        <span class="profile-overview__error" id="phone-error"></span>
+      <div class="form__field">
+        <label for="zip">ZIP / Postal Code</label>
+        <input type="text" id="zip" name="zip" />
       </div>
     </div>
-    <button
-      type="submit"
-      class="profile-overview__btn"
-      id="profile-overview-btn"
-      disabled
-    >
-      Save
-    </button>
-  </form>
+    <div class="form__field">
+      <label for="city">Email</label>
+      <input type="email" id="email" name="email" />
+    </div>
+    <div class="form__field">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" />
+      <span class="form__error" id="phone-error"></span>
+    </div>
+  </div>
+  
+  <button type="submit" class="form__btn" id="profile-overview-btn" disabled>Save</button>
+</form>
+
 </div>
 
         </section>
@@ -548,13 +543,11 @@
     </div>
     <div class="basket__content-items"></div>
     <div class="basket__footer">
-      <button class="basket__footer-check-out-btn" type="button">
-        Check Out
-      </button>
+      <button class="basket__footer-check-out-btn" type="button"></button>
     </div>
   </div>
 </div>
 
-    <script src="js/main.min.js?_v=20260331000303" defer></script>
+    <script src="js/main.min.js?_v=20260401222728" defer></script>
   </body>
 </html>
