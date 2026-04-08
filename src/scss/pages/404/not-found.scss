@@ -1,0 +1,85 @@
+@use "./utils/variables" as v;
+
+.not-found {
+  padding: 130px 0 60px;
+  @media (min-width: v.$bp-desktop) {
+    padding: 210px 0 100px;
+  }
+
+  &__container {
+    padding: 0 20px;
+    @media (min-width: v.$bp-tablet) {
+      padding: 0 30px;
+    }
+    @media (min-width: v.$bp-laptop-sm) {
+      padding: 0 102px;
+    }
+    @media (min-width: v.$bp-desktop) {
+      padding: 0 559px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 682px;
+    margin: 0 auto;
+  }
+
+  &__img-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    @media (min-width: v.$bp-desktop) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: "Effra", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
+    @media (min-width: v.$bp-desktop) {
+      font-size: 26px;
+    }
+  }
+
+  &__sub-title {
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+    margin-bottom: 20px;
+    @media (min-width: v.$bp-desktop) {
+      font-size: 16px;
+      line-height: 1.75;
+    }
+  }
+
+  &__link {
+    border-radius: 100px;
+    background: v.$main-orange;
+    border: 1px solid v.$main-orange;
+    font-family: "Effra", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: v.$color-white;
+    width: 100%;
+    max-width: 330px;
+    padding: 18px 0;
+    @media (min-width: v.$bp-desktop) {
+      padding: 20px 0;
+      font-size: 20px;
+    }
+  }
+}
