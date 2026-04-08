@@ -227,7 +227,7 @@
 
   &__img-block picture {
     position: relative;
-    z-index: 2;
+    z-index: 400;
   }
 
   &__circle-purple {
@@ -235,7 +235,7 @@
     @media (min-width: v.$bp-laptop-sm) {
       display: block;
       position: absolute;
-      z-index: 1;
+      z-index: 300;
       border-radius: 100%;
       width: clamp(300px, 30vw, 523px);
       aspect-ratio: 1 / 1;
