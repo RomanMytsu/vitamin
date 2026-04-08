@@ -1,0 +1,92 @@
+@use "./utils/variables" as v;
+
+.checkout-seccess {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 22px 20px;
+  }
+
+  &__logo {
+    margin-bottom: 30px;
+    @media (min-width: v.$bp-desktop) {
+      margin-bottom: 80px;
+    }
+
+    svg {
+      @media (min-width: v.$bp-desktop) {
+        width: 168px;
+        height: 200px;
+      }
+    }
+  }
+
+  &__title {
+    font-family: "Effra", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
+    @media (min-width: v.$bp-desktop) {
+      font-size: 26px;
+    }
+  }
+
+  &__sub-title {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 260px;
+    @media (min-width: v.$bp-desktop) {
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 682px;
+    }
+  }
+
+  &__link {
+    border-radius: 100px;
+    background: v.$main-orange;
+    border: 1px solid v.$main-orange;
+    font-family: "Effra", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: v.$color-white;
+    width: 100%;
+    max-width: 330px;
+    padding: 18px 0;
+    @media (min-width: v.$bp-desktop) {
+      padding: 20px 0;
+      font-size: 20px;
+    }
+  }
+
+  &__line {
+    border: none;
+    height: 1px;
+    background-color: #f2f2f2;
+    width: 100%;
+    margin: 40px 0 30px;
+    @media (min-width: v.$bp-desktop) {
+      margin: 50px 0 40px;
+      width: 508px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.03em;
+    @media (min-width: v.$bp-laptop) {
+      width: 500px;
+      br {
+        display: none;
+      }
+    }
+  }
+}
